@@ -1,0 +1,242 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 35 35 35; /* #232323 */
+    --foreground: 203 187 175; /* #CBBBAF */
+    --card: 83 82 86; /* #535256 */
+    --card-foreground: 203 187 175; /* #CBBBAF */
+    --popover: 35 35 35; /* #232323 */
+    --popover-foreground: 203 187 175; /* #CBBBAF */
+    --primary: 122 83 56; /* #7A5338 */
+    --primary-foreground: 203 187 175; /* #CBBBAF */
+    --secondary: 83 82 86; /* #535256 */
+    --secondary-foreground: 175 167 164; /* #AFA7A4 */
+    --muted: 83 82 86; /* #535256 */
+    --muted-foreground: 175 167 164; /* #AFA7A4 */
+    --accent: 175 167 164; /* #AFA7A4 */
+    --accent-foreground: 35 35 35; /* #232323 */
+    --destructive: 122 83 56; /* #7A5338 */
+    --destructive-foreground: 203 187 175; /* #CBBBAF */
+    --border: 83 82 86; /* #535256 */
+    --input: 83 82 86; /* #535256 */
+    --ring: 122 83 56; /* #7A5338 */
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-elementz-dark text-elementz-cream font-lato;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-anton;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 1s ease-in-out;
+  }
+
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #535256;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #7a5338;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #afa7a4;
+}
+
+/* Solo colores de la paleta */
+button:hover,
+.button:hover {
+  background-color: #7a5338;
+  color: #cbbbaf;
+}
+
+button:focus,
+.button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #7a5338;
+}
+
+.secondary-button:hover {
+  background-color: #afa7a4;
+  color: #232323;
+}
+
+/* Placeholder text color - SOLO color de paleta */
+::placeholder {
+  color: #afa7a4 !important;
+  opacity: 1;
+}
+
+:-ms-input-placeholder {
+  color: #afa7a4 !important;
+}
+
+::-ms-input-placeholder {
+  color: #afa7a4 !important;
+}
+
+/* Remover cualquier color que no sea de la paleta */
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #7a5338 !important;
+  box-shadow: 0 0 0 1px #7a5338 !important;
+}
+
+/* Tabs activos */
+[data-state="active"] {
+  background-color: #7a5338 !important;
+  color: #cbbbaf !important;
+}
+
+/* Select items */
+[role="option"]:hover {
+  background-color: #7a5338 !important;
+  color: #cbbbaf !important;
+}
+
+/* Links hover - SOLO los que tienen href */
+a[href]:hover {
+  color: #7a5338 !important;
+}
+
+/* Eliminar TODOS los colores rosado y verde de desplegables */
+[role="listbox"],
+[role="option"],
+[data-radix-select-content],
+[data-radix-select-item] {
+  background-color: #232323 !important;
+  color: #cbbbaf !important;
+}
+
+[role="option"]:hover,
+[data-radix-select-item]:hover,
+[data-highlighted],
+[data-state="checked"] {
+  background-color: #7a5338 !important;
+  color: #cbbbaf !important;
+}
+
+/* Forzar colores en todos los elementos de select */
+.select-content,
+.select-item {
+  background-color: #232323 !important;
+  color: #cbbbaf !important;
+}
+
+.select-item:hover {
+  background-color: #7a5338 !important;
+  color: #cbbbaf !important;
+}
+
+/* Eliminar outline rosado/verde */
+*:focus-visible {
+  outline: 2px solid #7a5338 !important;
+  outline-offset: 2px !important;
+}
+
+/* Eliminar TODOS los colores verde y rosado de tablas y filas */
+tr:hover,
+[role="row"]:hover,
+.table-row:hover {
+  background-color: #535256 !important;
+}
+
+/* Forzar colores en botones de acciones */
+button[variant="outline"]:hover,
+.action-button:hover {
+  background-color: #7a5338 !important;
+  color: #cbbbaf !important;
+  border-color: #7a5338 !important;
+}
+
+/* Forzar texto claro en inputs */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="number"],
+input[type="date"],
+textarea,
+select {
+  color: #cbbbaf !important;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="tel"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus,
+textarea:focus,
+select:focus {
+  color: #cbbbaf !important;
+}
+
+/* Asegurar que solo los botones cambien en hover, no los links */
+nav a:hover {
+  background-color: transparent !important;
+}
+
+/* Forzar colores específicos para elementos problemáticos */
+.lucide:hover,
+svg:hover {
+  color: #7a5338 !important;
+}
+
+/* Quitar el borde verde de focus de todos los dropdowns/selects */
+select:focus,
+select:focus-visible,
+[role="combobox"]:focus,
+[role="combobox"]:focus-visible,
+[data-radix-select-trigger]:focus,
+[data-radix-select-trigger]:focus-visible,
+button[role="combobox"]:focus,
+button[role="combobox"]:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+  border-color: #7a5338 !important;
+}
