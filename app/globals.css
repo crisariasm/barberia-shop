@@ -126,8 +126,8 @@ select:focus {
   box-shadow: 0 0 0 1px #7a5338 !important;
 }
 
-/* Tabs activos */
-[data-state="active"] {
+/* Tabs activos - solo para los triggers/botones */
+[role="tab"][data-state="active"] {
   background-color: #7a5338 !important;
   color: #cbbbaf !important;
 }

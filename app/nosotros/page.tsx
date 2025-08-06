@@ -1,13 +1,10 @@
-import { Suspense, lazy } from "react"
 import { Scissors, Star, Users, Award, Target, Eye, Heart } from "lucide-react"
 import Image from "next/image"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
-
-const Button = lazy(() => import("@/components/ui/button").then(module => ({ default: module.Button })))
-const Card = lazy(() => import("@/components/ui/card").then(module => ({ default: module.Card })))
-const CardContent = lazy(() => import("@/components/ui/card").then(module => ({ default: module.CardContent })))
-const Badge = lazy(() => import("@/components/ui/badge").then(module => ({ default: module.Badge })))
+import { Button } from "@/components/ui/button"
+import { Card, CardContent } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
 
 export default function NosotrosPage() {
   const team = [
@@ -103,31 +100,27 @@ export default function NosotrosPage() {
       <section className="py-20 bg-elementz-slate">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
-            <Suspense fallback={<div className="bg-elementz-dark border-elementz-brown p-8 animate-pulse h-48"></div>}>
-              <Card className="bg-elementz-dark border-elementz-brown p-8">
-                <div className="flex items-center mb-6">
-                  <Target className="h-12 w-12 text-elementz-brown mr-4" />
-                  <h2 className="text-3xl font-anton text-elementz-cream">Nuestra Misión</h2>
-                </div>
-                <p className="text-elementz-gray text-lg leading-relaxed">
-                  Elementz tiene como misión crear experiencias memorables únicas inspirando confianza y estilo en cada
-                  cliente.
-                </p>
-              </Card>
-            </Suspense>
+            <Card className="bg-elementz-dark border-elementz-brown p-8">
+              <div className="flex items-center mb-6">
+                <Target className="h-12 w-12 text-elementz-brown mr-4" />
+                <h2 className="text-3xl font-anton text-elementz-cream">Nuestra Misión</h2>
+              </div>
+              <p className="text-elementz-gray text-lg leading-relaxed">
+                Elementz tiene como misión crear experiencias memorables únicas inspirando confianza y estilo en cada
+                cliente.
+              </p>
+            </Card>
 
-            <Suspense fallback={<div className="bg-elementz-dark border-elementz-brown p-8 animate-pulse h-48"></div>}>
-              <Card className="bg-elementz-dark border-elementz-brown p-8">
-                <div className="flex items-center mb-6">
-                  <Eye className="h-12 w-12 text-elementz-brown mr-4" />
-                  <h2 className="text-3xl font-anton text-elementz-cream">Nuestra Visión</h2>
-                </div>
-                <p className="text-elementz-gray text-lg leading-relaxed">
-                  Elementz proyecta convertirse a corto plazo en el lugar preferido de todos los hombres donde pueda
-                  descubrir y proyectar su mejor versión.
-                </p>
-              </Card>
-            </Suspense>
+            <Card className="bg-elementz-dark border-elementz-brown p-8">
+              <div className="flex items-center mb-6">
+                <Eye className="h-12 w-12 text-elementz-brown mr-4" />
+                <h2 className="text-3xl font-anton text-elementz-cream">Nuestra Visión</h2>
+              </div>
+              <p className="text-elementz-gray text-lg leading-relaxed">
+                Elementz proyecta convertirse a corto plazo en el lugar preferido de todos los hombres donde pueda
+                descubrir y proyectar su mejor versión.
+              </p>
+            </Card>
           </div>
         </div>
       </section>
@@ -146,17 +139,16 @@ export default function NosotrosPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {values.map((value, index) => (
-              <Suspense key={index} fallback={<div className="bg-elementz-slate border-elementz-brown p-8 animate-pulse h-48"></div>}>
-                <Card
-                  className="bg-elementz-slate border-elementz-brown hover:border-elementz-brown/80 transition-all duration-300 group"
-                >
-                  <CardContent className="p-8 text-center">
-                    <value.icon className="h-12 w-12 text-elementz-brown mx-auto mb-4 group-hover:scale-110 transition-transform" />
-                    <h3 className="text-xl font-anton text-elementz-cream mb-3">{value.title}</h3>
-                    <p className="text-elementz-gray">{value.description}</p>
-                  </CardContent>
-                </Card>
-              </Suspense>
+              <Card
+                key={index}
+                className="bg-elementz-slate border-elementz-brown hover:border-elementz-brown/80 transition-all duration-300 group"
+              >
+                <CardContent className="p-8 text-center">
+                  <value.icon className="h-12 w-12 text-elementz-brown mx-auto mb-4 group-hover:scale-110 transition-transform" />
+                  <h3 className="text-xl font-anton text-elementz-cream mb-3">{value.title}</h3>
+                  <p className="text-elementz-gray">{value.description}</p>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
@@ -174,31 +166,28 @@ export default function NosotrosPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {team.map((member, index) => (
-              <Suspense key={index} fallback={<div className="bg-elementz-dark border-elementz-brown p-8 animate-pulse h-64"></div>}>
-                <Card
-                  className="bg-elementz-dark border-elementz-brown hover:border-elementz-brown/80 transition-all duration-300 group overflow-hidden"
-                >
-                  <div className="relative overflow-hidden">
-                    <Image
-                      src={member.image || "/placeholder.svg"}
-                      alt={member.name}
-                      width={300}
-                      height={300}
-                      className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                    <Suspense fallback={<div className="absolute top-4 left-4 bg-elementz-brown text-elementz-cream px-2 py-1 animate-pulse"></div>}>
-                      <Badge className="absolute top-4 left-4 bg-elementz-brown text-elementz-cream">
-                        {member.experience}
-                      </Badge>
-                    </Suspense>
-                  </div>
-                  <CardContent className="p-6">
-                    <h3 className="text-xl font-anton text-elementz-cream mb-2">{member.name}</h3>
-                    <p className="text-elementz-brown font-semibold mb-2">{member.role}</p>
-                    <p className="text-elementz-gray text-sm">{member.specialty}</p>
-                  </CardContent>
-                </Card>
-              </Suspense>
+              <Card
+                key={index}
+                className="bg-elementz-dark border-elementz-brown hover:border-elementz-brown/80 transition-all duration-300 group overflow-hidden"
+              >
+                <div className="relative overflow-hidden">
+                  <Image
+                    src={member.image || "/placeholder.svg"}
+                    alt={member.name}
+                    width={300}
+                    height={300}
+                    className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <Badge className="absolute top-4 left-4 bg-elementz-brown text-elementz-cream">
+                    {member.experience}
+                  </Badge>
+                </div>
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-anton text-elementz-cream mb-2">{member.name}</h3>
+                  <p className="text-elementz-brown font-semibold mb-2">{member.role}</p>
+                  <p className="text-elementz-gray text-sm">{member.specialty}</p>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
@@ -216,19 +205,17 @@ export default function NosotrosPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <Suspense key={index} fallback={<div className="bg-elementz-slate border-elementz-brown p-8 animate-pulse h-48"></div>}>
-                <Card className="bg-elementz-slate border-elementz-brown">
-                  <CardContent className="p-8">
-                    <div className="flex items-center mb-4">
-                      {[...Array(testimonial.rating)].map((_, i) => (
-                        <Star key={i} className="h-5 w-5 text-elementz-brown fill-current" />
-                      ))}
-                    </div>
-                    <p className="text-elementz-gray mb-4 italic">"{testimonial.comment}"</p>
-                    <p className="text-elementz-cream font-semibold">- {testimonial.name}</p>
-                  </CardContent>
-                </Card>
-              </Suspense>
+              <Card key={index} className="bg-elementz-slate border-elementz-brown">
+                <CardContent className="p-8">
+                  <div className="flex items-center mb-4">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="h-5 w-5 text-elementz-brown fill-current" />
+                    ))}
+                  </div>
+                  <p className="text-elementz-gray mb-4 italic">"{testimonial.comment}"</p>
+                  <p className="text-elementz-cream font-semibold">- {testimonial.name}</p>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
@@ -242,22 +229,18 @@ export default function NosotrosPage() {
             Visítanos y descubre por qué somos la barbería de confianza para cientos de clientes
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Suspense fallback={<div className="bg-elementz-cream text-elementz-brown px-8 py-4 text-lg animate-pulse h-12 rounded"></div>}>
-              <Button
-                size="lg"
-                className="bg-elementz-cream text-elementz-brown hover:bg-elementz-cream/80 px-8 py-4 text-lg"
-              >
-                Reservar Cita
-              </Button>
-            </Suspense>
-            <Suspense fallback={<div className="bg-elementz-dark text-elementz-cream px-8 py-4 text-lg animate-pulse h-12 rounded"></div>}>
-              <Button
-                size="lg"
-                className="bg-elementz-dark text-elementz-cream hover:bg-elementz-slate px-8 py-4 text-lg"
-              >
-                Contactar
-              </Button>
-            </Suspense>
+            <Button
+              size="lg"
+              className="bg-elementz-cream text-elementz-brown hover:bg-elementz-cream/80 px-8 py-4 text-lg"
+            >
+              Reservar Cita
+            </Button>
+            <Button
+              size="lg"
+              className="bg-elementz-dark text-elementz-cream hover:bg-elementz-slate px-8 py-4 text-lg"
+            >
+              Contactar
+            </Button>
           </div>
         </div>
       </section>

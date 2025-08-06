@@ -1,22 +1,14 @@
 "use client"
 
-import { useState, useEffect, lazy, Suspense } from "react"
+import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { ShoppingCart, Menu, X, LogIn, Trash2, Plus, Minus, User } from "lucide-react"
 import Link from "next/link"
 import { usePathname, useRouter } from "next/navigation"
 import Image from "next/image"
-
-const Sheet = lazy(() => import("@/components/ui/sheet").then(mod => ({ default: mod.Sheet })))
-const SheetContent = lazy(() => import("@/components/ui/sheet").then(mod => ({ default: mod.SheetContent })))
-const SheetHeader = lazy(() => import("@/components/ui/sheet").then(mod => ({ default: mod.SheetHeader })))
-const SheetTitle = lazy(() => import("@/components/ui/sheet").then(mod => ({ default: mod.SheetTitle })))
-const SheetTrigger = lazy(() => import("@/components/ui/sheet").then(mod => ({ default: mod.SheetTrigger })))
-const Dialog = lazy(() => import("@/components/ui/dialog").then(mod => ({ default: mod.Dialog })))
-const DialogContent = lazy(() => import("@/components/ui/dialog").then(mod => ({ default: mod.DialogContent })))
-const DialogHeader = lazy(() => import("@/components/ui/dialog").then(mod => ({ default: mod.DialogHeader })))
-const DialogTitle = lazy(() => import("@/components/ui/dialog").then(mod => ({ default: mod.DialogTitle })))
+import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet"
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 
 interface CartItem {
   id: number
@@ -253,131 +245,127 @@ export default function ClientNavbar({ cart = [], onUpdateCart }: ClientNavbarPr
 
       {/* Login Required Dialog */}
       {showLoginDialog && (
-        <Suspense fallback={<div>Cargando...</div>}>
-          <Dialog open={showLoginDialog} onOpenChange={setShowLoginDialog}>
-            <DialogContent className="bg-elementz-slate border-elementz-brown text-elementz-cream">
-              <DialogHeader>
-                <DialogTitle className="font-anton text-center">Iniciar Sesión Requerido</DialogTitle>
-              </DialogHeader>
-              <div className="text-center py-6">
-                <ShoppingCart className="h-16 w-16 text-elementz-brown mx-auto mb-4" />
-                <p className="text-elementz-gray mb-6">Debes iniciar sesión para agregar productos al carrito</p>
-                <div className="space-y-3">
-                  <Link href="/login">
-                    <Button className="w-full bg-elementz-brown hover:bg-elementz-brown/80 text-elementz-cream">
-                      <LogIn className="h-4 w-4 mr-2" />
-                      Iniciar Sesión
-                    </Button>
-                  </Link>
-                  <Button
-                    variant="outline"
-                    className="w-full border-elementz-brown text-elementz-brown hover:bg-elementz-brown hover:text-elementz-cream bg-transparent"
-                    onClick={() => setShowLoginDialog(false)}
-                  >
-                    Cancelar
+        <Dialog open={showLoginDialog} onOpenChange={setShowLoginDialog}>
+          <DialogContent className="bg-elementz-slate border-elementz-brown text-elementz-cream">
+            <DialogHeader>
+              <DialogTitle className="font-anton text-center">Iniciar Sesión Requerido</DialogTitle>
+            </DialogHeader>
+            <div className="text-center py-6">
+              <ShoppingCart className="h-16 w-16 text-elementz-brown mx-auto mb-4" />
+              <p className="text-elementz-gray mb-6">Debes iniciar sesión para agregar productos al carrito</p>
+              <div className="space-y-3">
+                <Link href="/login">
+                  <Button className="w-full bg-elementz-brown hover:bg-elementz-brown/80 text-elementz-cream">
+                    <LogIn className="h-4 w-4 mr-2" />
+                    Iniciar Sesión
                   </Button>
-                </div>
+                </Link>
+                <Button
+                  variant="outline"
+                  className="w-full border-elementz-brown text-elementz-brown hover:bg-elementz-brown hover:text-elementz-cream bg-transparent"
+                  onClick={() => setShowLoginDialog(false)}
+                >
+                  Cancelar
+                </Button>
               </div>
-            </DialogContent>
-          </Dialog>
-        </Suspense>
+            </div>
+          </DialogContent>
+        </Dialog>
       )}
 
       {/* Cart Sheet */}
       {showCartSheet && (
-        <Suspense fallback={<div>Cargando carrito...</div>}>
-          <Sheet open={showCartSheet} onOpenChange={setShowCartSheet}>
-            <SheetContent className="bg-elementz-dark border-elementz-brown text-elementz-cream w-96">
-              <SheetHeader>
-                <SheetTitle className="text-elementz-cream font-anton">Carrito de Compras</SheetTitle>
-              </SheetHeader>
+        <Sheet open={showCartSheet} onOpenChange={setShowCartSheet}>
+          <SheetContent className="bg-elementz-dark border-elementz-brown text-elementz-cream w-96">
+            <SheetHeader>
+              <SheetTitle className="text-elementz-cream font-anton">Carrito de Compras</SheetTitle>
+            </SheetHeader>
 
-              <div className="mt-6 flex flex-col h-[calc(100vh-120px)]">
-                {cart.length === 0 ? (
-                  <div className="flex-1 flex items-center justify-center">
-                    <div className="text-center">
-                      <ShoppingCart className="h-16 w-16 text-elementz-gray mx-auto mb-4" />
-                      <p className="text-elementz-gray">Tu carrito está vacío</p>
-                    </div>
+            <div className="mt-6 flex flex-col h-[calc(100vh-120px)]">
+              {cart.length === 0 ? (
+                <div className="flex-1 flex items-center justify-center">
+                  <div className="text-center">
+                    <ShoppingCart className="h-16 w-16 text-elementz-gray mx-auto mb-4" />
+                    <p className="text-elementz-gray">Tu carrito está vacío</p>
                   </div>
-                ) : (
-                  <>
-                    <div className="flex-1 overflow-y-auto space-y-4 pr-2">
-                      {cart.map((item) => (
-                        <div key={item.id} className="flex items-center space-x-3 bg-elementz-slate p-3 rounded-lg">
-                          <Image
-                            src={item.image || "/placeholder.svg"}
-                            alt={item.name}
-                            width={50}
-                            height={50}
-                            className="rounded-md flex-shrink-0"
-                          />
-                          <div className="flex-1 min-w-0">
-                            <h4 className="text-sm font-semibold text-elementz-cream truncate">{item.name}</h4>
-                            <p className="text-xs text-elementz-gray">{item.category}</p>
-                            <p className="text-sm text-elementz-brown font-bold">${item.price}</p>
-                          </div>
-                          <div className="flex items-center space-x-1 flex-shrink-0">
-                            <Button
-                              size="sm"
-                              variant="outline"
-                              className="h-6 w-6 p-0 border-elementz-brown text-elementz-brown hover:bg-elementz-brown hover:text-elementz-cream bg-transparent"
-                              onClick={() => updateQuantity(item.id, item.quantity - 1)}
-                            >
-                              <Minus className="h-3 w-3" />
-                            </Button>
-                            <span className="text-sm font-semibold w-6 text-center">{item.quantity}</span>
-                            <Button
-                              size="sm"
-                              variant="outline"
-                              className="h-6 w-6 p-0 border-elementz-brown text-elementz-brown hover:bg-elementz-brown hover:text-elementz-cream bg-transparent"
-                              onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                            >
-                              <Plus className="h-3 w-3" />
-                            </Button>
-                          </div>
+                </div>
+              ) : (
+                <>
+                  <div className="flex-1 overflow-y-auto space-y-4 pr-2">
+                    {cart.map((item) => (
+                      <div key={item.id} className="flex items-center space-x-3 bg-elementz-slate p-3 rounded-lg">
+                        <Image
+                          src={item.image || "/placeholder.svg"}
+                          alt={item.name}
+                          width={50}
+                          height={50}
+                          className="rounded-md flex-shrink-0"
+                        />
+                        <div className="flex-1 min-w-0">
+                          <h4 className="text-sm font-semibold text-elementz-cream truncate">{item.name}</h4>
+                          <p className="text-xs text-elementz-gray">{item.category}</p>
+                          <p className="text-sm text-elementz-brown font-bold">${item.price}</p>
+                        </div>
+                        <div className="flex items-center space-x-1 flex-shrink-0">
                           <Button
                             size="sm"
                             variant="outline"
-                            className="h-6 w-6 p-0 border-red-500 text-red-500 hover:bg-red-500 hover:text-white bg-transparent flex-shrink-0"
-                            onClick={() => removeItem(item.id)}
+                            className="h-6 w-6 p-0 border-elementz-brown text-elementz-brown hover:bg-elementz-brown hover:text-elementz-cream bg-transparent"
+                            onClick={() => updateQuantity(item.id, item.quantity - 1)}
                           >
-                            <Trash2 className="h-3 w-3" />
+                            <Minus className="h-3 w-3" />
+                          </Button>
+                          <span className="text-sm font-semibold w-6 text-center">{item.quantity}</span>
+                          <Button
+                            size="sm"
+                            variant="outline"
+                            className="h-6 w-6 p-0 border-elementz-brown text-elementz-brown hover:bg-elementz-brown hover:text-elementz-cream bg-transparent"
+                            onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                          >
+                            <Plus className="h-3 w-3" />
                           </Button>
                         </div>
-                      ))}
-                    </div>
-
-                    <div className="flex-shrink-0 border-t border-elementz-brown pt-4 mt-4 bg-elementz-dark">
-                      <div className="space-y-4">
-                        <div className="flex justify-between items-center px-1">
-                          <span className="text-lg font-anton text-elementz-cream">Total:</span>
-                          <span className="text-xl font-anton text-elementz-brown">
-                            ${getTotalPrice().toFixed(2)}
-                          </span>
-                        </div>
                         <Button
-                          onClick={handleCheckout}
-                          className="w-full bg-elementz-brown hover:bg-elementz-brown/80 text-elementz-cream font-semibold py-4 text-base rounded-lg shadow-lg transition-all duration-200 hover:shadow-xl"
+                          size="sm"
+                          variant="outline"
+                          className="h-6 w-6 p-0 border-red-500 text-red-500 hover:bg-red-500 hover:text-white bg-transparent flex-shrink-0"
+                          onClick={() => removeItem(item.id)}
                         >
-                          <ShoppingCart className="h-5 w-5 mr-2" />
-                          Comprar por WhatsApp
+                          <Trash2 className="h-3 w-3" />
                         </Button>
-                        <button
-                          onClick={() => setShowCartSheet(false)}
-                          className="w-full text-elementz-gray text-sm hover:text-elementz-cream transition-colors"
-                        >
-                          Cerrar
-                        </button>
-                        <div className="pb-2"></div>
                       </div>
+                    ))}
+                  </div>
+
+                  <div className="flex-shrink-0 border-t border-elementz-brown pt-4 mt-4 bg-elementz-dark">
+                    <div className="space-y-4">
+                      <div className="flex justify-between items-center px-1">
+                        <span className="text-lg font-anton text-elementz-cream">Total:</span>
+                        <span className="text-xl font-anton text-elementz-brown">
+                          ${getTotalPrice().toFixed(2)}
+                        </span>
+                      </div>
+                      <Button
+                        onClick={handleCheckout}
+                        className="w-full bg-elementz-brown hover:bg-elementz-brown/80 text-elementz-cream font-semibold py-4 text-base rounded-lg shadow-lg transition-all duration-200 hover:shadow-xl"
+                      >
+                        <ShoppingCart className="h-5 w-5 mr-2" />
+                        Comprar por WhatsApp
+                      </Button>
+                      <button
+                        onClick={() => setShowCartSheet(false)}
+                        className="w-full text-elementz-gray text-sm hover:text-elementz-cream transition-colors"
+                      >
+                        Cerrar
+                      </button>
+                      <div className="pb-2"></div>
                     </div>
-                  </>
-                )}
-              </div>
-            </SheetContent>
-          </Sheet>
-        </Suspense>
+                  </div>
+                </>
+              )}
+            </div>
+          </SheetContent>
+        </Sheet>
       )}
     </>
   )
