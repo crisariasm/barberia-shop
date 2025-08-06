@@ -132,7 +132,7 @@ export default function DashboardPage() {
       <section className="bg-elementz-brown py-16 mt-16">
         <div className="container mx-auto px-4">
           <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-anton text-elementz-cream mb-2">Mi Panel</h1>
+            <h1 className="text-4xl md:text-5xl font-anton text-elementz-cream mb-2">Mi Dashboard</h1>
             <p className="text-xl text-elementz-cream/90">Bienvenido de vuelta, {user.name}</p>
           </div>
         </div>

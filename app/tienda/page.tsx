@@ -1,17 +1,26 @@
 "use client"
 
-import { useState, useEffect } from "react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Input } from "@/components/ui/input"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
+import { useState, useEffect, lazy, Suspense } from "react"
 import { Search, Filter, ShoppingCart, Heart, LogIn } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
+
+const Button = lazy(() => import("@/components/ui/button").then(mod => ({ default: mod.Button })))
+const Badge = lazy(() => import("@/components/ui/badge").then(mod => ({ default: mod.Badge })))
+const Input = lazy(() => import("@/components/ui/input").then(mod => ({ default: mod.Input })))
+const Card = lazy(() => import("@/components/ui/card").then(mod => ({ default: mod.Card })))
+const CardContent = lazy(() => import("@/components/ui/card").then(mod => ({ default: mod.CardContent })))
+const Select = lazy(() => import("@/components/ui/select").then(mod => ({ default: mod.Select })))
+const SelectContent = lazy(() => import("@/components/ui/select").then(mod => ({ default: mod.SelectContent })))
+const SelectItem = lazy(() => import("@/components/ui/select").then(mod => ({ default: mod.SelectItem })))
+const SelectTrigger = lazy(() => import("@/components/ui/select").then(mod => ({ default: mod.SelectTrigger })))
+const SelectValue = lazy(() => import("@/components/ui/select").then(mod => ({ default: mod.SelectValue })))
+const Dialog = lazy(() => import("@/components/ui/dialog").then(mod => ({ default: mod.Dialog })))
+const DialogContent = lazy(() => import("@/components/ui/dialog").then(mod => ({ default: mod.DialogContent })))
+const DialogHeader = lazy(() => import("@/components/ui/dialog").then(mod => ({ default: mod.DialogHeader })))
+const DialogTitle = lazy(() => import("@/components/ui/dialog").then(mod => ({ default: mod.DialogTitle })))
 
 interface CartItem {
   id: number
@@ -28,13 +37,24 @@ export default function TiendaPage() {
   const [cart, setCart] = useState<CartItem[]>([])
   const [user, setUser] = useState<any>(null)
   const [showLoginDialog, setShowLoginDialog] = useState(false)
+  const [currentPage, setCurrentPage] = useState(1)
+  const [productsPerPage] = useState(8)
 
   useEffect(() => {
     const userData = localStorage.getItem("user")
     if (userData) {
-      setUser(JSON.parse(userData))
+      try {
+        setUser(JSON.parse(userData))
+      } catch (error) {
+        console.error("Error loading user data:", error)
+        localStorage.removeItem("user")
+      }
     }
   }, [])
+
+  useEffect(() => {
+    setCurrentPage(1)
+  }, [searchTerm, selectedCategory])
 
   const products = [
     {
@@ -124,6 +144,11 @@ export default function TiendaPage() {
     return matchesCategory && matchesSearch
   })
 
+  const indexOfLastProduct = currentPage * productsPerPage
+  const indexOfFirstProduct = indexOfLastProduct - productsPerPage
+  const currentProducts = filteredProducts.slice(indexOfFirstProduct, indexOfLastProduct)
+  const totalPages = Math.ceil(filteredProducts.length / productsPerPage)
+
   const addToCart = (product: any) => {
     if (!user) {
       setShowLoginDialog(true)
@@ -149,6 +174,8 @@ export default function TiendaPage() {
     }
   }
 
+
+
   return (
     <div className="min-h-screen bg-elementz-dark font-lato">
       <Navbar cart={cart} onUpdateCart={setCart} />
@@ -170,13 +197,15 @@ export default function TiendaPage() {
             <div className="flex flex-col sm:flex-row gap-4 flex-1">
               <div className="relative flex-1 max-w-md">
                 <Search className="absolute left-3 top-3 h-4 w-4 text-elementz-gray" />
-                <Input
-                  placeholder="Buscar productos..."
-                  maxLength={100}
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  className="pl-10 bg-elementz-dark border-elementz-brown text-elementz-cream placeholder:text-elementz-gray"
-                />
+                <Suspense fallback={<div className="pl-10 bg-elementz-dark border-elementz-brown h-10 animate-pulse rounded"></div>}>
+                  <Input
+                    placeholder="Buscar productos..."
+                    maxLength={100}
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    className="pl-10 bg-elementz-dark border-elementz-brown text-elementz-cream placeholder:text-elementz-gray"
+                  />
+                </Suspense>
               </div>
               <Select value={selectedCategory} onValueChange={setSelectedCategory}>
                 <SelectTrigger className="w-full sm:w-48 bg-elementz-dark border-elementz-brown text-elementz-cream">
@@ -201,7 +230,7 @@ export default function TiendaPage() {
       <section className="py-12">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-            {filteredProducts.map((product) => (
+            {currentProducts.map((product) => (
               <Card
                 key={product.id}
                 className="bg-elementz-slate border-elementz-brown hover:border-elementz-brown/80 transition-all duration-300 group overflow-hidden"
@@ -221,13 +250,15 @@ export default function TiendaPage() {
                     <Badge className="absolute top-4 right-4 bg-elementz-dark text-elementz-cream">Agotado</Badge>
                   )}
                   <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                    <Button
-                      size="sm"
-                      variant="outline"
-                      className="bg-elementz-cream hover:bg-elementz-gray text-elementz-dark"
-                    >
-                      <Heart className="h-4 w-4" />
-                    </Button>
+                    <Suspense fallback={<div className="bg-elementz-cream h-8 w-8 animate-pulse rounded"></div>}>
+                      <Button
+                        size="sm"
+                        variant="outline"
+                        className="bg-elementz-cream hover:bg-elementz-gray text-elementz-dark"
+                      >
+                        <Heart className="h-4 w-4" />
+                      </Button>
+                    </Suspense>
                   </div>
                 </div>
                 <CardContent className="p-6">
@@ -246,24 +277,55 @@ export default function TiendaPage() {
                       )}
                     </div>
                   </div>
-                  <Button
-                    className="w-full bg-elementz-brown hover:bg-elementz-brown/80 text-elementz-cream font-lato font-semibold"
-                    onClick={() => addToCart(product)}
-                    disabled={!product.inStock}
-                  >
-                    {product.inStock ? (
-                      <>
-                        <ShoppingCart className="h-4 w-4 mr-2" />
+                  <Suspense fallback={<div className="w-full bg-elementz-brown h-10 animate-pulse rounded text-elementz-cream"></div>}>
+                    <Button
+                      className="w-full bg-elementz-brown hover:bg-elementz-brown/80 text-elementz-cream font-lato font-semibold"
+                      onClick={() => addToCart(product)}
+                      disabled={!product.inStock}
+                    >
+                      {product.inStock ? (
+                        <>
+                          <ShoppingCart className="h-4 w-4 mr-2" />
                         Agregar al Carrito
                       </>
                     ) : (
                       "Agotado"
                     )}
-                  </Button>
+                    </Button>
+                  </Suspense>
                 </CardContent>
               </Card>
             ))}
           </div>
+
+          {/* Paginación */}
+          {totalPages > 1 && (
+            <div className="flex justify-center items-center space-x-4 mt-12">
+              <Suspense fallback={<div className="bg-elementz-brown h-10 w-20 animate-pulse rounded"></div>}>
+                <Button
+                  onClick={() => setCurrentPage(currentPage - 1)}
+                  disabled={currentPage === 1}
+                  className="bg-elementz-brown hover:bg-elementz-brown/80 text-elementz-cream disabled:opacity-50"
+                >
+                  Anterior
+                </Button>
+              </Suspense>
+              
+              <span className="text-elementz-cream">
+                Página {currentPage} de {totalPages}
+              </span>
+              
+              <Suspense fallback={<div className="bg-elementz-brown h-10 w-20 animate-pulse rounded"></div>}>
+                <Button
+                  onClick={() => setCurrentPage(currentPage + 1)}
+                  disabled={currentPage === totalPages}
+                  className="bg-elementz-brown hover:bg-elementz-brown/80 text-elementz-cream disabled:opacity-50"
+                >
+                  Siguiente
+                </Button>
+              </Suspense>
+            </div>
+          )}
 
           {filteredProducts.length === 0 && (
             <div className="text-center py-12">
@@ -285,7 +347,7 @@ export default function TiendaPage() {
       </section>
 
       {/* Newsletter */}
-      <section className="py-16 bg-elementz-slate">
+      {/* <section className="py-16 bg-elementz-slate">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-anton text-elementz-cream mb-4">Mantente al Día</h2>
           <p className="text-elementz-gray mb-8 max-w-2xl mx-auto">
@@ -300,7 +362,7 @@ export default function TiendaPage() {
             <Button className="bg-elementz-brown hover:bg-elementz-brown/80 text-elementz-cream">Suscribirse</Button>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Login Required Dialog */}
       <Dialog open={showLoginDialog} onOpenChange={setShowLoginDialog}>

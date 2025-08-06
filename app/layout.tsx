@@ -19,7 +19,6 @@ export const metadata: Metadata = {
   title: "ELEMENTZ - Barbería Premium de Estilo y Confianza",
   description:
     "ELEMENTZ es la barbería premium donde descubres tu mejor versión. Experiencias memorables, estilo único y confianza en cada servicio.",
-    generator: 'v0.dev'
 }
 
 export default function RootLayout({

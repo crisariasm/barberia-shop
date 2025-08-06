@@ -1,18 +1,17 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
+import { MapPin, Phone, Mail, Clock, ExternalLink, MessageCircle } from "lucide-react"
+import Image from "next/image"
+import Navbar from "@/components/navbar"
+import Footer from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { MapPin, Phone, Mail, Clock, ExternalLink, MessageCircle } from "lucide-react"
-import Image from "next/image"
-import Navbar from "@/components/navbar"
-import Footer from "@/components/footer"
 
 export default function ContactoPage() {
   const [formData, setFormData] = useState({
@@ -28,26 +27,25 @@ export default function ContactoPage() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
 
-    // Crear mensaje para WhatsApp
-    const message = `🏪 *ELEMENTZ - Solicitud de Cita*
+    const message = `*ELEMENTZ - Solicitud de Cita*
 
-👤 *Cliente:* ${formData.name}
-📧 *Email:* ${formData.email}
-📱 *Teléfono:* ${formData.phone}
+    *Cliente:* ${formData.name}
+    *Email:* ${formData.email}
+    *Teléfono:* ${formData.phone}
 
-💼 *Servicio:* ${formData.service}
-📅 *Fecha:* ${formData.date}
-🕐 *Hora:* ${formData.time}
+    *Servicio:* ${formData.service}
+    *Fecha:* ${formData.date}
+    *Hora:* ${formData.time}
 
-💬 *Mensaje:*
-${formData.message || "Sin mensaje adicional"}
+    *Mensaje:*
+    ${formData.message || "Sin mensaje adicional"}
 
-_Solicitud enviada desde la página web_`
+    _Solicitud enviada desde la página web_`
 
     const whatsappUrl = `https://wa.me/573113514498?text=${encodeURIComponent(message)}`
     window.open(whatsappUrl, "_blank")
 
-    // Limpiar formulario
+    // Clear form
     setFormData({
       name: "",
       email: "",
@@ -122,43 +120,43 @@ _Solicitud enviada desde la página web_`
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Contact Form */}
-            <Card className="bg-elementz-dark border-elementz-brown h-full flex flex-col">
-              <CardHeader>
-                <CardTitle className="text-2xl font-anton text-elementz-cream">Reservar Cita</CardTitle>
-                <p className="text-elementz-gray">Reserva tu espacio para una asesoría personalizada o comercial.</p>
-              </CardHeader>
-              <CardContent className="flex-1 flex flex-col">
+              <Card className="bg-elementz-dark border-elementz-brown h-full flex flex-col">
+                <CardHeader>
+                  <CardTitle className="text-2xl font-anton text-elementz-cream">Reservar Cita</CardTitle>
+                  <p className="text-elementz-gray">Reserva tu espacio para una asesoría personalizada o comercial.</p>
+                </CardHeader>
+                <CardContent className="flex-1 flex flex-col">
                 <form onSubmit={handleSubmit} className="space-y-4 flex-1 flex flex-col">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                       <Label htmlFor="name" className="text-elementz-cream">
                         Nombre Completo *
                       </Label>
-                      <Input
-                        id="name"
-                        type="text"
-                        required
-                        maxLength={50}
-                        value={formData.name}
-                        onChange={(e) => handleChange("name", e.target.value)}
-                        className="bg-elementz-slate border-elementz-brown text-elementz-cream placeholder:text-elementz-gray"
-                        placeholder="Tu nombre"
-                      />
+                        <Input
+                          id="name"
+                          type="text"
+                          required
+                          maxLength={50}
+                          value={formData.name}
+                          onChange={(e) => handleChange("name", e.target.value)}
+                          className="bg-elementz-slate border-elementz-brown text-elementz-cream placeholder:text-elementz-gray"
+                          placeholder="Tu nombre"
+                        />
                     </div>
                     <div>
                       <Label htmlFor="phone" className="text-elementz-cream">
                         Teléfono *
                       </Label>
-                      <Input
-                        id="phone"
-                        type="tel"
-                        required
-                        maxLength={15}
-                        value={formData.phone}
-                        onChange={(e) => handleChange("phone", e.target.value)}
-                        className="bg-elementz-slate border-elementz-brown text-elementz-cream placeholder:text-elementz-gray"
-                        placeholder="311 123 4567"
-                      />
+                        <Input
+                          id="phone"
+                          type="tel"
+                          required
+                          maxLength={15}
+                          value={formData.phone}
+                          onChange={(e) => handleChange("phone", e.target.value)}
+                          className="bg-elementz-slate border-elementz-brown text-elementz-cream placeholder:text-elementz-gray"
+                          placeholder="311 123 4567"
+                        />
                     </div>
                   </div>
 
@@ -166,34 +164,34 @@ _Solicitud enviada desde la página web_`
                     <Label htmlFor="email" className="text-elementz-cream">
                       Email *
                     </Label>
-                    <Input
-                      id="email"
-                      type="email"
-                      required
-                      maxLength={100}
-                      value={formData.email}
-                      onChange={(e) => handleChange("email", e.target.value)}
-                      className="bg-elementz-slate border-elementz-brown text-elementz-cream placeholder:text-elementz-gray"
-                      placeholder="tu@email.com"
-                    />
+                      <Input
+                        id="email"
+                        type="email"
+                        required
+                        maxLength={100}
+                        value={formData.email}
+                        onChange={(e) => handleChange("email", e.target.value)}
+                        className="bg-elementz-slate border-elementz-brown text-elementz-cream placeholder:text-elementz-gray"
+                        placeholder="tu@email.com"
+                      />
                   </div>
 
                   <div>
                     <Label htmlFor="service" className="text-elementz-cream">
                       Servicio Deseado *
                     </Label>
-                    <Select onValueChange={(value) => handleChange("service", value)}>
-                      <SelectTrigger className="bg-elementz-slate border-elementz-brown text-elementz-cream">
-                        <SelectValue placeholder="Selecciona un servicio" />
-                      </SelectTrigger>
-                      <SelectContent className="bg-elementz-dark border-elementz-brown">
-                        {services.map((service) => (
-                          <SelectItem key={service} value={service} className="text-elementz-cream">
-                            {service}
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
+                      <Select onValueChange={(value) => handleChange("service", value)}>
+                        <SelectTrigger className="bg-elementz-slate border-elementz-brown text-elementz-cream">
+                          <SelectValue placeholder="Selecciona un servicio" />
+                        </SelectTrigger>
+                        <SelectContent className="bg-elementz-dark border-elementz-brown">
+                          {services.map((service) => (
+                            <SelectItem key={service} value={service} className="text-elementz-cream">
+                              {service}
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -201,31 +199,31 @@ _Solicitud enviada desde la página web_`
                       <Label htmlFor="date" className="text-elementz-cream">
                         Fecha Preferida *
                       </Label>
-                      <Input
-                        id="date"
-                        type="date"
-                        required
-                        value={formData.date}
-                        onChange={(e) => handleChange("date", e.target.value)}
-                        className="bg-elementz-slate border-elementz-brown text-elementz-cream"
-                      />
+                        <Input
+                          id="date"
+                          type="date"
+                          required
+                          value={formData.date}
+                          onChange={(e) => handleChange("date", e.target.value)}
+                          className="bg-elementz-slate border-elementz-brown text-elementz-cream"
+                        />
                     </div>
                     <div>
                       <Label htmlFor="time" className="text-elementz-cream">
                         Hora Preferida *
                       </Label>
-                      <Select onValueChange={(value) => handleChange("time", value)}>
-                        <SelectTrigger className="bg-elementz-slate border-elementz-brown text-elementz-cream">
-                          <SelectValue placeholder="Selecciona una hora" />
-                        </SelectTrigger>
-                        <SelectContent className="bg-elementz-dark border-elementz-brown">
-                          {timeSlots.map((time) => (
-                            <SelectItem key={time} value={time} className="text-elementz-cream">
-                              {time}
-                            </SelectItem>
-                          ))}
-                        </SelectContent>
-                      </Select>
+                        <Select onValueChange={(value) => handleChange("time", value)}>
+                          <SelectTrigger className="bg-elementz-slate border-elementz-brown text-elementz-cream">
+                            <SelectValue placeholder="Selecciona una hora" />
+                          </SelectTrigger>
+                          <SelectContent className="bg-elementz-dark border-elementz-brown">
+                            {timeSlots.map((time) => (
+                              <SelectItem key={time} value={time} className="text-elementz-cream">
+                                {time}
+                              </SelectItem>
+                            ))}
+                          </SelectContent>
+                        </Select>
                     </div>
                   </div>
 
@@ -233,32 +231,32 @@ _Solicitud enviada desde la página web_`
                     <Label htmlFor="message" className="text-elementz-cream">
                       Mensaje Adicional
                     </Label>
-                    <Textarea
-                      id="message"
-                      maxLength={200}
-                      value={formData.message}
-                      onChange={(e) => handleChange("message", e.target.value)}
-                      className="bg-elementz-slate border-elementz-brown text-elementz-cream placeholder:text-elementz-gray min-h-[80px]"
-                      placeholder="Cuéntanos cualquier detalle especial o preferencia..."
-                      rows={3}
-                    />
+                      <Textarea
+                        id="message"
+                        maxLength={200}
+                        value={formData.message}
+                        onChange={(e) => handleChange("message", e.target.value)}
+                        className="w-full bg-elementz-slate border-elementz-brown text-elementz-cream placeholder:text-elementz-gray min-h-[200px] h-40 resize-none"
+                        placeholder="Cuéntanos cualquier detalle especial o preferencia..."
+                        rows={6}
+                      />
                   </div>
 
-                  <Button
-                    type="submit"
-                    className="w-full bg-elementz-brown hover:bg-elementz-brown/80 text-elementz-cream font-semibold py-3 mt-auto"
-                  >
-                    <MessageCircle className="h-4 w-4 mr-2" />
-                    Enviar Solicitud por WhatsApp
-                  </Button>
+                    <Button
+                      type="submit"
+                      className="w-full bg-elementz-brown hover:bg-elementz-brown/80 text-elementz-cream font-semibold py-3 mt-auto"
+                    >
+                      <MessageCircle className="h-4 w-4 mr-2" />
+                      Enviar Solicitud por WhatsApp
+                    </Button>
                 </form>
               </CardContent>
             </Card>
 
             {/* Contact Info + Help */}
-            <Card className="bg-elementz-dark border-elementz-brown h-full flex flex-col">
-              <CardHeader>
-                <CardTitle className="text-2xl font-anton text-elementz-cream">Información de Contacto</CardTitle>
+              <Card className="bg-elementz-dark border-elementz-brown h-full flex flex-col">
+                <CardHeader>
+                  <CardTitle className="text-2xl font-anton text-elementz-cream">Información de Contacto</CardTitle>
               </CardHeader>
               <CardContent className="space-y-6 flex-1 flex flex-col">
                 <div className="flex items-start space-x-4">
@@ -272,15 +270,6 @@ _Solicitud enviada desde la página web_`
                       <br />
                       Risaralda, Colombia
                     </p>
-                    <a
-                      href="https://maps.google.com/?q=Carrera+21+23-26+La+Pradera+Dosquebradas+Pereira+Risaralda"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center text-elementz-brown hover:text-elementz-brown/80 text-sm mt-2"
-                    >
-                      <ExternalLink className="h-4 w-4 mr-1" />
-                      Ver en Google Maps
-                    </a>
                   </div>
                 </div>
 
@@ -362,15 +351,17 @@ _Solicitud enviada desde la página web_`
               <div className="p-6 text-center">
                 <h3 className="text-xl font-anton text-elementz-cream mb-2">ELEMENTZ Barbería</h3>
                 <p className="text-elementz-gray mb-4">Carrera 21#23-26 La Pradera, Dosquebradas, Pereira, Risaralda</p>
-                <Button className="bg-elementz-brown hover:bg-elementz-brown/80 text-elementz-cream" asChild>
+                <Button
+                  className="bg-elementz-brown hover:bg-elementz-brown/80 text-elementz-cream px-8 py-3"
+                  asChild
+                >
                   <a
-                    href="https://maps.google.com/?q=Carrera+21+23-26+La+Pradera+Dosquebradas+Pereira+Risaralda"
+                    href="https://maps.app.goo.gl/muhB1rFBUGMdnTSX7"
                     target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center text-elementz-cream hover:text-elementz-cream"
+                    className="flex items-center justify-center"
                   >
-                    <MapPin className="h-4 w-4 mr-2" />
-                    Cómo Llegar
+                    <MapPin className="h-4 w-4 mr-2 text-elementz-cream" />
+                    <span className="text-elementz-cream">Cómo llegar</span>
                   </a>
                 </Button>
               </div>

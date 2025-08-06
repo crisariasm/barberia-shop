@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-import { HelpCircle, MessageCircle } from "lucide-react"
+import { HelpCircle } from "lucide-react"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 
@@ -41,7 +41,7 @@ export default function PreguntasFrecuentesPage() {
                 {/* Servicios de Barbería */}
                 <AccordionItem value="servicios-1" className="border-elementz-brown">
                   <AccordionTrigger className="text-elementz-cream hover:text-elementz-brown/80">
-                    ¿Qué servicios de barbería ofrecen?
+                    <span className="text-elementz-cream">¿Qué servicios de barbería ofrecen?</span>
                   </AccordionTrigger>
                   <AccordionContent className="text-elementz-gray">
                     Ofrecemos una amplia gama de servicios: Corte clásico, afeitado premium con navaja, tratamientos
@@ -53,7 +53,7 @@ export default function PreguntasFrecuentesPage() {
 
                 <AccordionItem value="servicios-2" className="border-elementz-brown">
                   <AccordionTrigger className="text-elementz-cream hover:text-elementz-brown/80">
-                    ¿Necesito reservar cita previa?
+                    <span className="text-elementz-cream">¿Necesito reservar cita previa?</span>
                   </AccordionTrigger>
                   <AccordionContent className="text-elementz-gray">
                     Recomendamos reservar cita previa para garantizar tu espacio, especialmente los fines de semana.
@@ -64,7 +64,7 @@ export default function PreguntasFrecuentesPage() {
 
                 <AccordionItem value="servicios-3" className="border-elementz-brown">
                   <AccordionTrigger className="text-elementz-cream hover:text-elementz-brown/80">
-                    ¿Cuánto tiempo dura cada servicio?
+                    <span className="text-elementz-cream">¿Cuánto tiempo dura cada servicio?</span>
                   </AccordionTrigger>
                   <AccordionContent className="text-elementz-gray">
                     Los tiempos varían según el servicio: Corte clásico (45 min), Afeitado premium (60 min), Tratamiento
@@ -76,7 +76,7 @@ export default function PreguntasFrecuentesPage() {
                 {/* Productos */}
                 <AccordionItem value="productos-1" className="border-elementz-brown">
                   <AccordionTrigger className="text-elementz-cream hover:text-elementz-brown/80">
-                    ¿Qué productos venden en la tienda online?
+                    <span className="text-elementz-cream">¿Qué productos venden en la tienda online?</span>
                   </AccordionTrigger>
                   <AccordionContent className="text-elementz-gray">
                     Vendemos productos premium para el cuidado masculino: pomadas y ceras para el cabello, aceites y
@@ -88,7 +88,7 @@ export default function PreguntasFrecuentesPage() {
 
                 <AccordionItem value="productos-2" className="border-elementz-brown">
                   <AccordionTrigger className="text-elementz-cream hover:text-elementz-brown/80">
-                    ¿Los productos tienen garantía?
+                    <span className="text-elementz-cream">¿Los productos tienen garantía?</span>
                   </AccordionTrigger>
                   <AccordionContent className="text-elementz-gray">
                     Sí, todos nuestros productos tienen garantía de calidad por 30 días contra defectos de fabricación.
@@ -100,7 +100,7 @@ export default function PreguntasFrecuentesPage() {
                 {/* Compras Online */}
                 <AccordionItem value="compras-1" className="border-elementz-brown">
                   <AccordionTrigger className="text-elementz-cream hover:text-elementz-brown/80">
-                    ¿Cómo funciona el proceso de compra online?
+                    <span className="text-elementz-cream">¿Cómo funciona el proceso de compra online?</span>
                   </AccordionTrigger>
                   <AccordionContent className="text-elementz-gray">
                     Es muy sencillo: 1) Navega por nuestra tienda y agrega productos al carrito, 2) Haz clic en "Comprar
@@ -111,7 +111,7 @@ export default function PreguntasFrecuentesPage() {
 
                 <AccordionItem value="compras-2" className="border-elementz-brown">
                   <AccordionTrigger className="text-elementz-cream hover:text-elementz-brown/80">
-                    ¿Qué métodos de pago aceptan?
+                    <span className="text-elementz-cream">¿Qué métodos de pago aceptan?</span>
                   </AccordionTrigger>
                   <AccordionContent className="text-elementz-gray">
                     Aceptamos efectivo, transferencias bancarias (Bancolombia, Nequi, Daviplata), tarjetas de crédito y
@@ -123,7 +123,7 @@ export default function PreguntasFrecuentesPage() {
                 {/* Envíos */}
                 <AccordionItem value="envios-1" className="border-elementz-brown">
                   <AccordionTrigger className="text-elementz-cream hover:text-elementz-brown/80">
-                    ¿Hacen envíos a domicilio?
+                    <span className="text-elementz-cream">¿Hacen envíos a domicilio?</span>
                   </AccordionTrigger>
                   <AccordionContent className="text-elementz-gray">
                     Sí, hacemos envíos en Pereira, Dosquebradas y municipios cercanos. El envío es GRATIS en
@@ -134,7 +134,7 @@ export default function PreguntasFrecuentesPage() {
 
                 <AccordionItem value="envios-2" className="border-elementz-brown">
                   <AccordionTrigger className="text-elementz-cream hover:text-elementz-brown/80">
-                    ¿Cuánto tiempo tarda la entrega?
+                    <span className="text-elementz-cream">¿Cuánto tiempo tarda la entrega?</span>
                   </AccordionTrigger>
                   <AccordionContent className="text-elementz-gray">
                     En zona local (Dosquebradas/Pereira): 1-2 días hábiles. Área metropolitana: 2-3 días hábiles.
@@ -146,7 +146,7 @@ export default function PreguntasFrecuentesPage() {
                 {/* Devoluciones */}
                 <AccordionItem value="devoluciones-1" className="border-elementz-brown">
                   <AccordionTrigger className="text-elementz-cream hover:text-elementz-brown/80">
-                    ¿Puedo devolver un producto si no me gusta?
+                    <span className="text-elementz-cream">¿Puedo devolver un producto si no me gusta?</span>
                   </AccordionTrigger>
                   <AccordionContent className="text-elementz-gray">
                     Sí, tienes 5 días hábiles para devolver productos que no hayas abierto, siempre que estén en su
@@ -158,7 +158,7 @@ export default function PreguntasFrecuentesPage() {
                 {/* Citas */}
                 <AccordionItem value="citas-1" className="border-elementz-brown">
                   <AccordionTrigger className="text-elementz-cream hover:text-elementz-brown/80">
-                    ¿Puedo cambiar o cancelar mi cita?
+                    <span className="text-elementz-cream">¿Puedo cambiar o cancelar mi cita?</span>
                   </AccordionTrigger>
                   <AccordionContent className="text-elementz-gray">
                     Sí, puedes cambiar o cancelar tu cita con al menos 2 horas de anticipación sin costo. Contáctanos
@@ -169,7 +169,7 @@ export default function PreguntasFrecuentesPage() {
 
                 <AccordionItem value="citas-2" className="border-elementz-brown">
                   <AccordionTrigger className="text-elementz-cream hover:text-elementz-brown/80">
-                    ¿Atienden menores de edad?
+                    <span className="text-elementz-cream">¿Atienden menores de edad?</span>
                   </AccordionTrigger>
                   <AccordionContent className="text-elementz-gray">
                     Sí, atendemos menores de edad acompañados por un adulto responsable. Para menores de 14 años es
@@ -181,7 +181,7 @@ export default function PreguntasFrecuentesPage() {
                 {/* Precios */}
                 <AccordionItem value="precios-1" className="border-elementz-brown">
                   <AccordionTrigger className="text-elementz-cream hover:text-elementz-brown/80">
-                    ¿Los precios incluyen propina?
+                    <span className="text-elementz-cream">¿Los precios incluyen propina?</span>
                   </AccordionTrigger>
                   <AccordionContent className="text-elementz-gray">
                     No, los precios publicados no incluyen propina. La propina es voluntaria y queda a tu criterio según
@@ -193,7 +193,7 @@ export default function PreguntasFrecuentesPage() {
                 {/* Ubicación */}
                 <AccordionItem value="ubicacion-1" className="border-elementz-brown">
                   <AccordionTrigger className="text-elementz-cream hover:text-elementz-brown/80">
-                    ¿Dónde están ubicados?
+                    <span className="text-elementz-cream">¿Dónde están ubicados?</span>
                   </AccordionTrigger>
                   <AccordionContent className="text-elementz-gray">
                     Estamos ubicados en Carrera 21#23-26 La Pradera, Dosquebradas, Pereira, Risaralda. Tenemos
@@ -205,7 +205,7 @@ export default function PreguntasFrecuentesPage() {
                 {/* COVID */}
                 <AccordionItem value="covid-1" className="border-elementz-brown">
                   <AccordionTrigger className="text-elementz-cream hover:text-elementz-brown/80">
-                    ¿Qué medidas de bioseguridad manejan?
+                    <span className="text-elementz-cream">¿Qué medidas de bioseguridad manejan?</span>
                   </AccordionTrigger>
                   <AccordionContent className="text-elementz-gray">
                     Mantenemos estrictos protocolos de bioseguridad: desinfección de herramientas después de cada
@@ -225,7 +225,7 @@ export default function PreguntasFrecuentesPage() {
                   className="bg-elementz-brown hover:bg-elementz-brown/80 text-elementz-cream"
                   onClick={() => sendWhatsApp("Hola! Tengo una pregunta que no encontré en las FAQ.")}
                 >
-                  <MessageCircle className="h-4 w-4 mr-2" />
+                  {/* <MessageCircle className="h-4 w-4 mr-2" /> */}
                   Contactar por WhatsApp
                 </Button>
               </div>

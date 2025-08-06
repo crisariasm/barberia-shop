@@ -1,16 +1,15 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
+import { Scissors, Eye, EyeOff, User, UserPlus } from "lucide-react"
+import Link from "next/link"
+import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Label } from "@/components/ui/label"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Scissors, Eye, EyeOff, User, UserPlus } from "lucide-react"
-import Link from "next/link"
-import { useRouter } from "next/navigation"
 
 export default function LoginPage() {
   const router = useRouter()
@@ -33,9 +32,8 @@ export default function LoginPage() {
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault()
 
-    // Simulación de login - en producción sería una API
     if (loginData.email && loginData.password) {
-      // Guardar datos del usuario en localStorage
+      // Save user data to localStorage
       const userData = {
         id: 1,
         name: "Usuario Demo",
@@ -61,7 +59,6 @@ export default function LoginPage() {
     }
 
     if (registerData.name && registerData.email && registerData.password) {
-      // Simulación de registro - en producción sería una API
       const userData = {
         id: Date.now(),
         name: registerData.name,

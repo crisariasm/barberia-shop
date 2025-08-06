@@ -1,4 +1,3 @@
-"use client"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Truck, Clock, MapPin, Package, CreditCard } from "lucide-react"
 import Navbar from "@/components/navbar"
