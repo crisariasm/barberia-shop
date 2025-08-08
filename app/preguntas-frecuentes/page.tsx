@@ -33,7 +33,7 @@ export default function PreguntasFrecuentesPage() {
         <div className="container mx-auto px-4 max-w-4xl">
           <Card className="bg-elementz-dark border-elementz-brown">
             <CardHeader>
-              <CardTitle className="text-2xl font-anton text-elementz-cream">Preguntas Frecuentes - ELEMENTZ</CardTitle>
+              <CardTitle className="text-2xl font-anton text-elementz-cream" style={{ fontWeight: 400 }}>Preguntas Frecuentes - ELEMENTZ</CardTitle>
               <p className="text-elementz-gray">Respuestas a las consultas más comunes de nuestros clientes</p>
             </CardHeader>
             <CardContent>

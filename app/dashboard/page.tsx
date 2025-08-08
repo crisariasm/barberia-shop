@@ -227,7 +227,7 @@ export default function DashboardPage() {
               <Card className="bg-elementz-dark border-elementz-brown">
                 <CardHeader>
                   <div className="flex items-center justify-between">
-                    <CardTitle className="text-elementz-cream font-anton">Información Personal</CardTitle>
+                    <CardTitle className="text-elementz-cream font-anton" style={{ fontWeight: 400 }}>Información Personal</CardTitle>
                     <Button
                       onClick={() => setIsEditing(!isEditing)}
                       className="bg-elementz-brown hover:bg-elementz-brown/80 text-elementz-cream"
@@ -302,7 +302,7 @@ export default function DashboardPage() {
             <TabsContent value="purchases">
               <Card className="bg-elementz-dark border-elementz-brown">
                 <CardHeader>
-                  <CardTitle className="text-elementz-cream font-anton">Historial de Compras</CardTitle>
+                  <CardTitle className="text-elementz-cream font-anton" style={{ fontWeight: 400 }}>Historial de Compras</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <Table>
@@ -348,7 +348,7 @@ export default function DashboardPage() {
               <Card className="bg-elementz-dark border-elementz-brown">
                 <CardHeader>
                   <div className="flex items-center justify-between">
-                    <CardTitle className="text-elementz-cream font-anton">Mis Citas</CardTitle>
+                    <CardTitle className="text-elementz-cream font-anton" style={{ fontWeight: 400 }}>Mis Citas</CardTitle>
                     <Link href="/contacto">
                       <Button className="bg-elementz-brown hover:bg-elementz-brown/80 text-elementz-cream">
                         <Scissors className="h-4 w-4 mr-2" />

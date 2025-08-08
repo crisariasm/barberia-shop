@@ -122,7 +122,7 @@ export default function ContactoPage() {
             {/* Contact Form */}
               <Card className="bg-elementz-dark border-elementz-brown h-full flex flex-col">
                 <CardHeader>
-                  <CardTitle className="text-2xl font-anton text-elementz-cream">Reservar Cita</CardTitle>
+                  <CardTitle className="text-2xl font-anton text-elementz-cream" style={{ fontWeight: 400 }}>Reservar Cita</CardTitle>
                   <p className="text-elementz-gray">Reserva tu espacio para una asesoría personalizada o comercial.</p>
                 </CardHeader>
                 <CardContent className="flex-1 flex flex-col">
@@ -256,13 +256,13 @@ export default function ContactoPage() {
             {/* Contact Info + Help */}
               <Card className="bg-elementz-dark border-elementz-brown h-full flex flex-col">
                 <CardHeader>
-                  <CardTitle className="text-2xl font-anton text-elementz-cream">Información de Contacto</CardTitle>
+                  <CardTitle className="text-2xl font-anton text-elementz-cream" style={{ fontWeight: 400 }}>Información de Contacto</CardTitle>
               </CardHeader>
               <CardContent className="space-y-6 flex-1 flex flex-col">
                 <div className="flex items-start space-x-4">
                   <MapPin className="h-6 w-6 text-elementz-brown mt-1 flex-shrink-0" />
                   <div>
-                    <h3 className="font-semibold text-elementz-cream mb-1">Dirección</h3>
+                    <h3 className="font-semibold text-elementz-cream mb-1" style={{ fontWeight: 400 }}>Dirección</h3>
                     <p className="text-elementz-gray">
                       Carrera 21#23-26 La Pradera
                       <br />
@@ -276,7 +276,7 @@ export default function ContactoPage() {
                 <div className="flex items-start space-x-4">
                   <Phone className="h-6 w-6 text-elementz-brown mt-1 flex-shrink-0" />
                   <div>
-                    <h3 className="font-semibold text-elementz-cream mb-1">WhatsApp</h3>
+                    <h3 className="font-semibold text-elementz-cream mb-1" style={{ fontWeight: 400 }}>WhatsApp</h3>
                     <p className="text-elementz-gray">311 351 4498</p>
                   </div>
                 </div>
@@ -284,7 +284,7 @@ export default function ContactoPage() {
                 <div className="flex items-start space-x-4">
                   <Mail className="h-6 w-6 text-elementz-brown mt-1 flex-shrink-0" />
                   <div>
-                    <h3 className="font-semibold text-elementz-cream mb-1">Email</h3>
+                    <h3 className="font-semibold text-elementz-cream mb-1" style={{ fontWeight: 400 }}>Email</h3>
                     <p className="text-elementz-gray">info@elementz.com</p>
                   </div>
                 </div>
@@ -292,7 +292,7 @@ export default function ContactoPage() {
                 <div className="flex items-start space-x-4">
                   <Clock className="h-6 w-6 text-elementz-brown mt-1 flex-shrink-0" />
                   <div>
-                    <h3 className="font-semibold text-elementz-cream mb-1">Horarios</h3>
+                    <h3 className="font-semibold text-elementz-cream mb-1" style={{ fontWeight: 400 }}>Horarios</h3>
                     <div className="text-elementz-gray space-y-1">
                       <p>Lunes - Viernes: 9:00 AM - 8:00 PM</p>
                       <p>Sábado: 9:00 AM - 6:00 PM</p>

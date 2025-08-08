@@ -83,7 +83,7 @@ export default function LoginPage() {
             <Scissors className="h-8 w-8 text-elementz-brown" />
             <span className="text-2xl font-anton text-elementz-cream">ELEMENTZ</span>
           </div>
-          <CardTitle className="text-2xl text-elementz-cream font-anton">Bienvenido</CardTitle>
+          <CardTitle className="text-2xl text-elementz-cream font-anton" style={{ fontWeight: 400 }}>Bienvenido</CardTitle>
         </CardHeader>
         <CardContent>
           <Tabs defaultValue="login" className="w-full">

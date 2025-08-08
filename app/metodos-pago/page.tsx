@@ -24,7 +24,7 @@ export default function MetodosPagoPage() {
         <div className="container mx-auto px-4 max-w-4xl">
           <Card className="bg-elementz-dark border-elementz-brown">
             <CardHeader>
-              <CardTitle className="text-2xl font-anton text-elementz-cream">Métodos de Pago Aceptados</CardTitle>
+              <CardTitle className="text-2xl font-anton text-elementz-cream" style={{ fontWeight: 400 }}>Métodos de Pago Aceptados</CardTitle>
               <p className="text-elementz-gray">Elige la forma de pago que más te convenga</p>
             </CardHeader>
             <CardContent>
@@ -37,7 +37,7 @@ export default function MetodosPagoPage() {
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="bg-elementz-slate p-4 rounded-lg">
-                      <h4 className="font-semibold text-elementz-cream mb-3">Tarjetas Aceptadas</h4>
+                      <h4 className="font-semibold text-elementz-cream mb-3" style={{ fontWeight: 400 }}>Tarjetas Aceptadas</h4>
                       <div className="space-y-2">
                         <div className="flex items-center space-x-2">
                           <CheckCircle className="h-4 w-4 text-green-500" />
@@ -58,7 +58,7 @@ export default function MetodosPagoPage() {
                       </div>
                     </div>
                     <div className="bg-elementz-slate p-4 rounded-lg">
-                      <h4 className="font-semibold text-elementz-cream mb-3">Características</h4>
+                      <h4 className="font-semibold text-elementz-cream mb-3" style={{ fontWeight: 400 }}>Características</h4>
                       <ul className="text-elementz-gray space-y-1 text-sm">
                         <li>• Procesamiento inmediato</li>
                         <li>• Conexión segura SSL</li>
@@ -78,7 +78,7 @@ export default function MetodosPagoPage() {
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="bg-elementz-slate p-4 rounded-lg">
-                      <h4 className="font-semibold text-elementz-cream mb-3">Bancos Principales</h4>
+                      <h4 className="font-semibold text-elementz-cream mb-3" style={{ fontWeight: 400 }}>Bancos Principales</h4>
                       <div className="space-y-2">
                         <div className="flex items-center space-x-2">
                           <CheckCircle className="h-4 w-4 text-green-500" />
@@ -103,7 +103,7 @@ export default function MetodosPagoPage() {
                       </div>
                     </div>
                     <div className="bg-elementz-slate p-4 rounded-lg">
-                      <h4 className="font-semibold text-elementz-cream mb-3">Proceso</h4>
+                      <h4 className="font-semibold text-elementz-cream mb-3" style={{ fontWeight: 400 }}>Proceso</h4>
                       <ol className="text-elementz-gray space-y-1 text-sm list-decimal list-inside">
                         <li>Realiza tu pedido por WhatsApp</li>
                         <li>Te enviamos datos bancarios</li>
@@ -126,21 +126,21 @@ export default function MetodosPagoPage() {
                       <div className="bg-elementz-brown text-elementz-cream rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3 font-bold">
                         N
                       </div>
-                      <h4 className="font-semibold text-elementz-cream mb-2">Nequi</h4>
+                      <h4 className="font-semibold text-elementz-cream mb-2" style={{ fontWeight: 400 }}>Nequi</h4>
                       <p className="text-elementz-gray text-sm">Transferencias instantáneas desde tu celular</p>
                     </div>
                     <div className="bg-elementz-slate p-4 rounded-lg text-center">
                       <div className="bg-elementz-brown text-elementz-cream rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3 font-bold">
                         D
                       </div>
-                      <h4 className="font-semibold text-elementz-cream mb-2">Daviplata</h4>
+                      <h4 className="font-semibold text-elementz-cream mb-2" style={{ fontWeight: 400 }}>Daviplata</h4>
                       <p className="text-elementz-gray text-sm">Pagos rápidos y seguros desde la app</p>
                     </div>
                     <div className="bg-elementz-slate p-4 rounded-lg text-center">
                       <div className="bg-elementz-brown text-elementz-cream rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3 font-bold">
                         P
                       </div>
-                      <h4 className="font-semibold text-elementz-cream mb-2">PSE</h4>
+                      <h4 className="font-semibold text-elementz-cream mb-2" style={{ fontWeight: 400 }}>PSE</h4>
                       <p className="text-elementz-gray text-sm">Débito directo desde tu cuenta bancaria</p>
                     </div>
                   </div>
@@ -152,7 +152,7 @@ export default function MetodosPagoPage() {
                   <div className="bg-elementz-slate p-6 rounded-lg">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
-                        <h4 className="font-semibold text-elementz-cream mb-3">En el Establecimiento</h4>
+                        <h4 className="font-semibold text-elementz-cream mb-3" style={{ fontWeight: 400 }}>En el Establecimiento</h4>
                         <ul className="text-elementz-gray space-y-1 text-sm">
                           <li>• Pago directo en caja</li>
                           <li>• Disponible para servicios y productos</li>
@@ -161,7 +161,7 @@ export default function MetodosPagoPage() {
                         </ul>
                       </div>
                       <div>
-                        <h4 className="font-semibold text-elementz-cream mb-3">Contra Entrega</h4>
+                        <h4 className="font-semibold text-elementz-cream mb-3" style={{ fontWeight: 400 }}>Contra Entrega</h4>
                         <ul className="text-elementz-gray space-y-1 text-sm">
                           <li>• Disponible en zona local</li>
                           <li>• Costo adicional: $5.000</li>
@@ -182,7 +182,7 @@ export default function MetodosPagoPage() {
                   <div className="bg-elementz-slate p-6 rounded-lg">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
-                        <h4 className="font-semibold text-elementz-cream mb-3">Protección de Datos</h4>
+                        <h4 className="font-semibold text-elementz-cream mb-3" style={{ fontWeight: 400 }}>Protección de Datos</h4>
                         <ul className="text-elementz-gray space-y-1 text-sm">
                           <li>• Certificado SSL 256 bits</li>
                           <li>• Cumplimiento PCI DSS</li>
@@ -191,7 +191,7 @@ export default function MetodosPagoPage() {
                         </ul>
                       </div>
                       <div>
-                        <h4 className="font-semibold text-elementz-cream mb-3">Verificaciones</h4>
+                        <h4 className="font-semibold text-elementz-cream mb-3" style={{ fontWeight: 400 }}>Verificaciones</h4>
                         <ul className="text-elementz-gray space-y-1 text-sm">
                           <li>• Verificación 3D Secure</li>
                           <li>• Validación en tiempo real</li>
@@ -208,21 +208,21 @@ export default function MetodosPagoPage() {
                   <h3 className="text-xl font-anton text-elementz-cream mb-4">Políticas de Pago</h3>
                   <div className="space-y-4">
                     <div className="bg-elementz-slate p-4 rounded-lg">
-                      <h4 className="font-semibold text-elementz-cream mb-2">Servicios de Barbería</h4>
+                      <h4 className="font-semibold text-elementz-cream mb-2" style={{ fontWeight: 400 }}>Servicios de Barbería</h4>
                       <p className="text-elementz-gray text-sm">
                         Los servicios se pagan al momento de recibirlos. Aceptamos todos los métodos de pago
                         mencionados. Para citas grupales o servicios premium, se puede solicitar un anticipo del 50%.
                       </p>
                     </div>
                     <div className="bg-elementz-slate p-4 rounded-lg">
-                      <h4 className="font-semibold text-elementz-cream mb-2">Compras Online</h4>
+                      <h4 className="font-semibold text-elementz-cream mb-2" style={{ fontWeight: 400 }}>Compras Online</h4>
                       <p className="text-elementz-gray text-sm">
                         Los productos se pagan antes del envío. Una vez confirmado el pago, procesamos y enviamos tu
                         pedido según los tiempos establecidos en nuestra política de envíos.
                       </p>
                     </div>
                     <div className="bg-elementz-slate p-4 rounded-lg">
-                      <h4 className="font-semibold text-elementz-cream mb-2">Reembolsos</h4>
+                      <h4 className="font-semibold text-elementz-cream mb-2" style={{ fontWeight: 400 }}>Reembolsos</h4>
                       <p className="text-elementz-gray text-sm">
                         Los reembolsos se procesan al mismo método de pago original en un plazo de 5-10 días hábiles,
                         dependiendo de tu entidad bancaria. Para pagos en efectivo, el reembolso se hace en efectivo o
@@ -230,7 +230,7 @@ export default function MetodosPagoPage() {
                       </p>
                     </div>
                     <div className="bg-elementz-slate p-4 rounded-lg">
-                      <h4 className="font-semibold text-elementz-cream mb-2">Promociones y Descuentos</h4>
+                      <h4 className="font-semibold text-elementz-cream mb-2" style={{ fontWeight: 400 }}>Promociones y Descuentos</h4>
                       <p className="text-elementz-gray text-sm">
                         Los descuentos y promociones se aplican automáticamente al momento del pago. No son acumulables
                         con otras ofertas salvo indicación contraria. Válidos según términos y condiciones específicos.
@@ -248,7 +248,7 @@ export default function MetodosPagoPage() {
                   </p>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <h4 className="font-semibold text-elementz-cream mb-2">Contacto Inmediato</h4>
+                      <h4 className="font-semibold text-elementz-cream mb-2" style={{ fontWeight: 400 }}>Contacto Inmediato</h4>
                       <div className="space-y-1 text-elementz-gray text-sm">
                         <p>
                           <strong>WhatsApp:</strong> +57 311 351 4498
@@ -259,7 +259,7 @@ export default function MetodosPagoPage() {
                       </div>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-elementz-cream mb-2">Horario de Soporte</h4>
+                      <h4 className="font-semibold text-elementz-cream mb-2" style={{ fontWeight: 400 }}>Horario de Soporte</h4>
                       <div className="space-y-1 text-elementz-gray text-sm">
                         <p>Lunes - Viernes: 9:00 AM - 8:00 PM</p>
                         <p>Sábado: 9:00 AM - 6:00 PM</p>

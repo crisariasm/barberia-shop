@@ -254,7 +254,7 @@ export default function ClientNavbar({ cart = [], onUpdateCart }: ClientNavbarPr
         <Sheet open={showCartSheet} onOpenChange={setShowCartSheet}>
           <SheetContent className="bg-elementz-dark border-elementz-brown text-elementz-cream w-96">
             <SheetHeader>
-              <SheetTitle className="text-elementz-cream font-anton">Carrito de Compras</SheetTitle>
+              <SheetTitle className="text-elementz-cream font-anton" style={{ fontWeight: 400 }}>Carrito de Compras</SheetTitle>
             </SheetHeader>
 
             <div className="mt-6 flex flex-col h-[calc(100vh-120px)]">
@@ -278,7 +278,7 @@ export default function ClientNavbar({ cart = [], onUpdateCart }: ClientNavbarPr
                           className="rounded-md flex-shrink-0"
                         />
                         <div className="flex-1 min-w-0">
-                          <h4 className="text-sm font-semibold text-elementz-cream truncate">{item.name}</h4>
+                          <h4 className="text-sm font-semibold text-elementz-cream truncate" style={{ fontWeight: 400 }}>{item.name}</h4>
                           <p className="text-xs text-elementz-gray">{item.category}</p>
                           <p className="text-sm text-elementz-brown font-bold">${item.price}</p>
                         </div>

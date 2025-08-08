@@ -24,7 +24,7 @@ export default function EnviosPage() {
         <div className="container mx-auto px-4 max-w-4xl">
           <Card className="bg-elementz-dark border-elementz-brown">
             <CardHeader>
-              <CardTitle className="text-2xl font-anton text-elementz-cream">Política de Envíos - ELEMENTZ</CardTitle>
+              <CardTitle className="text-2xl font-anton text-elementz-cream" style={{ fontWeight: 400 }}>Política de Envíos - ELEMENTZ</CardTitle>
               <p className="text-elementz-gray">Información actualizada sobre entregas y tiempos</p>
             </CardHeader>
             <CardContent>
@@ -37,7 +37,7 @@ export default function EnviosPage() {
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="bg-elementz-slate p-4 rounded-lg">
-                      <h4 className="font-semibold text-elementz-cream mb-2">Zona Local (GRATIS)</h4>
+                      <h4 className="font-semibold text-elementz-cream mb-2" style={{ fontWeight: 400 }}>Zona Local (GRATIS)</h4>
                       <ul className="text-elementz-gray space-y-1 text-sm">
                         <li>• Dosquebradas centro</li>
                         <li>• La Pradera</li>
@@ -47,7 +47,7 @@ export default function EnviosPage() {
                       <p className="text-elementz-brown font-semibold mt-2">Envío gratis en compras +$80.000</p>
                     </div>
                     <div className="bg-elementz-slate p-4 rounded-lg">
-                      <h4 className="font-semibold text-elementz-cream mb-2">Área Metropolitana</h4>
+                      <h4 className="font-semibold text-elementz-cream mb-2" style={{ fontWeight: 400 }}>Área Metropolitana</h4>
                       <ul className="text-elementz-gray space-y-1 text-sm">
                         <li>• Pereira (otras zonas)</li>
                         <li>• Santa Rosa de Cabal</li>
@@ -71,21 +71,21 @@ export default function EnviosPage() {
                         <div className="bg-elementz-brown text-elementz-cream rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-2 font-bold">
                           1-2
                         </div>
-                        <h4 className="font-semibold text-elementz-cream">Zona Local</h4>
+                        <h4 className="font-semibold text-elementz-cream" style={{ fontWeight: 400 }}>Zona Local</h4>
                         <p className="text-elementz-gray text-sm">días hábiles</p>
                       </div>
                       <div className="text-center">
                         <div className="bg-elementz-brown text-elementz-cream rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-2 font-bold">
                           2-3
                         </div>
-                        <h4 className="font-semibold text-elementz-cream">Área Metro</h4>
+                        <h4 className="font-semibold text-elementz-cream" style={{ fontWeight: 400 }}>Área Metro</h4>
                         <p className="text-elementz-gray text-sm">días hábiles</p>
                       </div>
                       <div className="text-center">
                         <div className="bg-elementz-brown text-elementz-cream rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-2 font-bold">
                           3-5
                         </div>
-                        <h4 className="font-semibold text-elementz-cream">Otras Zonas</h4>
+                        <h4 className="font-semibold text-elementz-cream" style={{ fontWeight: 400 }}>Otras Zonas</h4>
                         <p className="text-elementz-gray text-sm">días hábiles</p>
                       </div>
                     </div>
@@ -104,7 +104,7 @@ export default function EnviosPage() {
                         1
                       </div>
                       <div>
-                        <h4 className="font-semibold text-elementz-cream">Confirmación del Pedido</h4>
+                        <h4 className="font-semibold text-elementz-cream" style={{ fontWeight: 400 }}>Confirmación del Pedido</h4>
                         <p className="text-elementz-gray text-sm">
                           Recibes confirmación por WhatsApp con detalles del pedido y tiempo estimado de entrega.
                         </p>
@@ -115,7 +115,7 @@ export default function EnviosPage() {
                         2
                       </div>
                       <div>
-                        <h4 className="font-semibold text-elementz-cream">Preparación</h4>
+                        <h4 className="font-semibold text-elementz-cream" style={{ fontWeight: 400 }}>Preparación</h4>
                         <p className="text-elementz-gray text-sm">
                           Preparamos cuidadosamente tu pedido y lo empacamos de forma segura.
                         </p>
@@ -126,7 +126,7 @@ export default function EnviosPage() {
                         3
                       </div>
                       <div>
-                        <h4 className="font-semibold text-elementz-cream">Envío</h4>
+                        <h4 className="font-semibold text-elementz-cream" style={{ fontWeight: 400 }}>Envío</h4>
                         <p className="text-elementz-gray text-sm">
                           Te notificamos cuando el pedido sale de nuestras instalaciones.
                         </p>
@@ -137,7 +137,7 @@ export default function EnviosPage() {
                         4
                       </div>
                       <div>
-                        <h4 className="font-semibold text-elementz-cream">Entrega</h4>
+                        <h4 className="font-semibold text-elementz-cream" style={{ fontWeight: 400 }}>Entrega</h4>
                         <p className="text-elementz-gray text-sm">
                           Nuestro repartidor se contacta contigo 30 minutos antes de la entrega.
                         </p>
@@ -193,19 +193,19 @@ export default function EnviosPage() {
                   <h3 className="text-xl font-anton text-elementz-cream mb-4">Condiciones Especiales</h3>
                   <div className="space-y-4 text-elementz-gray">
                     <div className="bg-elementz-slate p-4 rounded-lg">
-                      <h4 className="font-semibold text-elementz-cream mb-2">Horarios de Entrega</h4>
+                      <h4 className="font-semibold text-elementz-cream mb-2" style={{ fontWeight: 400 }}>Horarios de Entrega</h4>
                       <p>Lunes a Viernes: 9:00 AM - 6:00 PM | Sábados: 9:00 AM - 4:00 PM</p>
                     </div>
                     <div className="bg-elementz-slate p-4 rounded-lg">
-                      <h4 className="font-semibold text-elementz-cream mb-2">Productos Frágiles</h4>
+                      <h4 className="font-semibold text-elementz-cream mb-2" style={{ fontWeight: 400 }}>Productos Frágiles</h4>
                       <p>Los productos frágiles tienen un costo adicional de $5.000 por empaque especial.</p>
                     </div>
                     <div className="bg-elementz-slate p-4 rounded-lg">
-                      <h4 className="font-semibold text-elementz-cream mb-2">Pedidos Grandes</h4>
+                      <h4 className="font-semibold text-elementz-cream mb-2" style={{ fontWeight: 400 }}>Pedidos Grandes</h4>
                       <p>Pedidos superiores a $300.000 pueden requerir tiempo adicional de preparación.</p>
                     </div>
                     <div className="bg-elementz-slate p-4 rounded-lg">
-                      <h4 className="font-semibold text-elementz-cream mb-2">Días Festivos</h4>
+                      <h4 className="font-semibold text-elementz-cream mb-2" style={{ fontWeight: 400 }}>Días Festivos</h4>
                       <p>Los envíos pueden tener retrasos durante días festivos y temporadas altas.</p>
                     </div>
                   </div>

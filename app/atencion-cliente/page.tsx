@@ -34,7 +34,7 @@ export default function AtencionClientePage() {
             {/* Canales de Contacto */}
             <Card className="bg-elementz-dark border-elementz-brown">
               <CardHeader>
-                <CardTitle className="text-2xl font-anton text-elementz-cream">Canales de Contacto</CardTitle>
+                <CardTitle className="text-2xl font-anton text-elementz-cream" style={{ fontWeight: 400 }}>Canales de Contacto</CardTitle>
                 <p className="text-elementz-gray">Múltiples formas de comunicarte con nosotros</p>
               </CardHeader>
               <CardContent className="space-y-6">
@@ -42,7 +42,7 @@ export default function AtencionClientePage() {
                   <div className="flex items-start space-x-4 bg-elementz-slate p-4 rounded-lg">
                     <MessageCircle className="h-6 w-6 text-elementz-brown mt-1 flex-shrink-0" />
                     <div className="flex-1">
-                      <h4 className="font-semibold text-elementz-cream mb-1">WhatsApp (Recomendado)</h4>
+                      <h4 className="font-semibold text-elementz-cream mb-1" style={{ fontWeight: 400 }}>WhatsApp (Recomendado)</h4>
                       <p className="text-elementz-gray text-sm mb-3">
                         Respuesta inmediata para consultas, pedidos y soporte técnico.
                       </p>
@@ -59,7 +59,7 @@ export default function AtencionClientePage() {
                   <div className="flex items-start space-x-4 bg-elementz-slate p-4 rounded-lg">
                     <Phone className="h-6 w-6 text-elementz-brown mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-elementz-cream mb-1">Teléfono</h4>
+                      <h4 className="font-semibold text-elementz-cream mb-1" style={{ fontWeight: 400 }}>Teléfono</h4>
                       <p className="text-elementz-gray text-sm mb-2">Para consultas urgentes y reservas de citas.</p>
                       <p className="text-elementz-brown font-semibold">+57 311 351 4498</p>
                     </div>
@@ -68,7 +68,7 @@ export default function AtencionClientePage() {
                   <div className="flex items-start space-x-4 bg-elementz-slate p-4 rounded-lg">
                     <Mail className="h-6 w-6 text-elementz-brown mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-elementz-cream mb-1">Email</h4>
+                      <h4 className="font-semibold text-elementz-cream mb-1" style={{ fontWeight: 400 }}>Email</h4>
                       <p className="text-elementz-gray text-sm mb-2">Para consultas detalladas y soporte técnico.</p>
                       <p className="text-elementz-brown font-semibold">info@elementz.com</p>
                     </div>
@@ -77,7 +77,7 @@ export default function AtencionClientePage() {
                   <div className="flex items-start space-x-4 bg-elementz-slate p-4 rounded-lg">
                     <Users className="h-6 w-6 text-elementz-brown mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-elementz-cream mb-1">Presencial</h4>
+                      <h4 className="font-semibold text-elementz-cream mb-1" style={{ fontWeight: 400 }}>Presencial</h4>
                       <p className="text-elementz-gray text-sm mb-2">Visítanos en nuestro establecimiento.</p>
                       <p className="text-elementz-brown font-semibold">Carrera 21#23-26 La Pradera, Dosquebradas</p>
                     </div>
@@ -89,7 +89,7 @@ export default function AtencionClientePage() {
             {/* Horarios de Atención */}
             <Card className="bg-elementz-dark border-elementz-brown">
               <CardHeader>
-                <CardTitle className="text-2xl font-anton text-elementz-cream">Horarios de Atención</CardTitle>
+                <CardTitle className="text-2xl font-anton text-elementz-cream" style={{ fontWeight: 400 }}>Horarios de Atención</CardTitle>
                 <p className="text-elementz-gray">Estamos disponibles cuando nos necesites</p>
               </CardHeader>
               <CardContent>
@@ -97,7 +97,7 @@ export default function AtencionClientePage() {
                   <div className="bg-elementz-slate p-4 rounded-lg">
                     <div className="flex items-center mb-3">
                       <Clock className="h-5 w-5 text-elementz-brown mr-2" />
-                      <h4 className="font-semibold text-elementz-cream">Atención General</h4>
+                      <h4 className="font-semibold text-elementz-cream" style={{ fontWeight: 400 }}>Atención General</h4>
                     </div>
                     <div className="space-y-2 text-elementz-gray text-sm">
                       <div className="flex justify-between">
@@ -118,7 +118,7 @@ export default function AtencionClientePage() {
                   <div className="bg-elementz-slate p-4 rounded-lg">
                     <div className="flex items-center mb-3">
                       <MessageCircle className="h-5 w-5 text-elementz-brown mr-2" />
-                      <h4 className="font-semibold text-elementz-cream">WhatsApp 24/7</h4>
+                      <h4 className="font-semibold text-elementz-cream" style={{ fontWeight: 400 }}>WhatsApp 24/7</h4>
                     </div>
                     <p className="text-elementz-gray text-sm">
                       Puedes escribirnos en cualquier momento. Respondemos inmediatamente en horario laboral y dentro de
@@ -129,7 +129,7 @@ export default function AtencionClientePage() {
                   <div className="bg-elementz-slate p-4 rounded-lg">
                     <div className="flex items-center mb-3">
                       <Star className="h-5 w-5 text-elementz-brown mr-2" />
-                      <h4 className="font-semibold text-elementz-cream">Soporte Prioritario</h4>
+                      <h4 className="font-semibold text-elementz-cream" style={{ fontWeight: 400 }}>Soporte Prioritario</h4>
                     </div>
                     <p className="text-elementz-gray text-sm">
                       Clientes VIP y casos urgentes reciben atención prioritaria con respuesta garantizada en menos de
@@ -145,13 +145,13 @@ export default function AtencionClientePage() {
           <div className="mt-8">
             <Card className="bg-elementz-dark border-elementz-brown">
               <CardHeader>
-                <CardTitle className="text-2xl font-anton text-elementz-cream">¿En qué te podemos ayudar?</CardTitle>
+                <CardTitle className="text-2xl font-anton text-elementz-cream" style={{ fontWeight: 400 }}>¿En qué te podemos ayudar?</CardTitle>
                 <p className="text-elementz-gray">Nuestro equipo está capacitado para resolver todas tus consultas</p>
               </CardHeader>
               <CardContent>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   <div className="bg-elementz-slate p-4 rounded-lg">
-                    <h4 className="font-semibold text-elementz-cream mb-2">📅 Reservas y Citas</h4>
+                    <h4 className="font-semibold text-elementz-cream mb-2" style={{ fontWeight: 400 }}>📅 Reservas y Citas</h4>
                     <ul className="text-elementz-gray text-sm space-y-1">
                       <li>• Agendar nuevas citas</li>
                       <li>• Modificar citas existentes</li>
@@ -167,7 +167,7 @@ export default function AtencionClientePage() {
                   </div>
 
                   <div className="bg-elementz-slate p-4 rounded-lg">
-                    <h4 className="font-semibold text-elementz-cream mb-2">🛒 Compras Online</h4>
+                    <h4 className="font-semibold text-elementz-cream mb-2" style={{ fontWeight: 400 }}>🛒 Compras Online</h4>
                     <ul className="text-elementz-gray text-sm space-y-1">
                       <li>• Estado de pedidos</li>
                       <li>• Información de productos</li>
@@ -183,7 +183,7 @@ export default function AtencionClientePage() {
                   </div>
 
                   <div className="bg-elementz-slate p-4 rounded-lg">
-                    <h4 className="font-semibold text-elementz-cream mb-2">🔄 Cambios y Devoluciones</h4>
+                    <h4 className="font-semibold text-elementz-cream mb-2" style={{ fontWeight: 400 }}>🔄 Cambios y Devoluciones</h4>
                     <ul className="text-elementz-gray text-sm space-y-1">
                       <li>• Solicitar devoluciones</li>
                       <li>• Cambios de productos</li>
@@ -199,7 +199,7 @@ export default function AtencionClientePage() {
                   </div>
 
                   <div className="bg-elementz-slate p-4 rounded-lg">
-                    <h4 className="font-semibold text-elementz-cream mb-2">💡 Asesoría Personalizada</h4>
+                    <h4 className="font-semibold text-elementz-cream mb-2" style={{ fontWeight: 400 }}>💡 Asesoría Personalizada</h4>
                     <ul className="text-elementz-gray text-sm space-y-1">
                       <li>• Recomendaciones de productos</li>
                       <li>• Consejos de cuidado</li>
@@ -215,7 +215,7 @@ export default function AtencionClientePage() {
                   </div>
 
                   <div className="bg-elementz-slate p-4 rounded-lg">
-                    <h4 className="font-semibold text-elementz-cream mb-2">🔧 Soporte Técnico</h4>
+                    <h4 className="font-semibold text-elementz-cream mb-2" style={{ fontWeight: 400 }}>🔧 Soporte Técnico</h4>
                     <ul className="text-elementz-gray text-sm space-y-1">
                       <li>• Problemas con la web</li>
                       <li>• Errores en el carrito</li>
@@ -231,7 +231,7 @@ export default function AtencionClientePage() {
                   </div>
 
                   <div className="bg-elementz-slate p-4 rounded-lg">
-                    <h4 className="font-semibold text-elementz-cream mb-2">📋 Información General</h4>
+                    <h4 className="font-semibold text-elementz-cream mb-2" style={{ fontWeight: 400 }}>📋 Información General</h4>
                     <ul className="text-elementz-gray text-sm space-y-1">
                       <li>• Precios y promociones</li>
                       <li>• Ubicación y horarios</li>
@@ -254,7 +254,7 @@ export default function AtencionClientePage() {
           <div className="mt-8">
             <Card className="bg-elementz-dark border-elementz-brown">
               <CardHeader>
-                <CardTitle className="text-2xl font-anton text-elementz-cream">Nuestro Compromiso Contigo</CardTitle>
+                <CardTitle className="text-2xl font-anton text-elementz-cream" style={{ fontWeight: 400 }}>Nuestro Compromiso Contigo</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -264,7 +264,7 @@ export default function AtencionClientePage() {
                         ⚡
                       </div>
                       <div>
-                        <h4 className="font-semibold text-elementz-cream">Respuesta Rápida</h4>
+                        <h4 className="font-semibold text-elementz-cream" style={{ fontWeight: 400 }}>Respuesta Rápida</h4>
                         <p className="text-elementz-gray text-sm">
                           Respondemos WhatsApp en menos de 15 minutos durante horario laboral.
                         </p>
@@ -275,7 +275,7 @@ export default function AtencionClientePage() {
                         🎯
                       </div>
                       <div>
-                        <h4 className="font-semibold text-elementz-cream">Soluciones Efectivas</h4>
+                        <h4 className="font-semibold text-elementz-cream" style={{ fontWeight: 400 }}>Soluciones Efectivas</h4>
                         <p className="text-elementz-gray text-sm">
                           Resolvemos el 95% de las consultas en el primer contacto.
                         </p>
@@ -286,7 +286,7 @@ export default function AtencionClientePage() {
                         🤝
                       </div>
                       <div>
-                        <h4 className="font-semibold text-elementz-cream">Trato Personalizado</h4>
+                        <h4 className="font-semibold text-elementz-cream" style={{ fontWeight: 400 }}>Trato Personalizado</h4>
                         <p className="text-elementz-gray text-sm">
                           Cada cliente recibe atención personalizada y adaptada a sus necesidades.
                         </p>
@@ -299,7 +299,7 @@ export default function AtencionClientePage() {
                         📞
                       </div>
                       <div>
-                        <h4 className="font-semibold text-elementz-cream">Seguimiento Completo</h4>
+                        <h4 className="font-semibold text-elementz-cream" style={{ fontWeight: 400 }}>Seguimiento Completo</h4>
                         <p className="text-elementz-gray text-sm">
                           Hacemos seguimiento hasta asegurar que tu problema esté completamente resuelto.
                         </p>
@@ -310,7 +310,7 @@ export default function AtencionClientePage() {
                         💯
                       </div>
                       <div>
-                        <h4 className="font-semibold text-elementz-cream">Satisfacción Garantizada</h4>
+                        <h4 className="font-semibold text-elementz-cream" style={{ fontWeight: 400 }}>Satisfacción Garantizada</h4>
                         <p className="text-elementz-gray text-sm">
                           Si no quedas satisfecho con nuestro servicio, trabajamos hasta lograrlo.
                         </p>
@@ -321,7 +321,7 @@ export default function AtencionClientePage() {
                         🔒
                       </div>
                       <div>
-                        <h4 className="font-semibold text-elementz-cream">Privacidad Protegida</h4>
+                        <h4 className="font-semibold text-elementz-cream" style={{ fontWeight: 400 }}>Privacidad Protegida</h4>
                         <p className="text-elementz-gray text-sm">
                           Tu información personal está segura y nunca será compartida con terceros.
                         </p>

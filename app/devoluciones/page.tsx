@@ -24,7 +24,7 @@ export default function DevolucionesPage() {
         <div className="container mx-auto px-4 max-w-4xl">
           <Card className="bg-elementz-dark border-elementz-brown">
             <CardHeader>
-              <CardTitle className="text-2xl font-anton text-elementz-cream">
+              <CardTitle className="text-2xl font-anton text-elementz-cream" style={{ fontWeight: 400 }}>
                 Política de Cambios y Devoluciones
               </CardTitle>
               <p className="text-elementz-gray">Tu satisfacción es nuestra prioridad</p>
@@ -59,7 +59,7 @@ export default function DevolucionesPage() {
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="bg-elementz-slate p-4 rounded-lg">
-                      <h4 className="font-semibold text-elementz-cream mb-3">✅ SÍ se pueden devolver:</h4>
+                      <h4 className="font-semibold text-elementz-cream mb-3" style={{ fontWeight: 400 }}>✅ SÍ se pueden devolver:</h4>
                       <ul className="text-elementz-gray space-y-2 text-sm">
                         <li>• Productos sin abrir en empaque original</li>
                         <li>• Herramientas de cuidado personal sin usar</li>
@@ -69,7 +69,7 @@ export default function DevolucionesPage() {
                       </ul>
                     </div>
                     <div className="bg-elementz-slate p-4 rounded-lg">
-                      <h4 className="font-semibold text-elementz-cream mb-3">❌ NO se pueden devolver:</h4>
+                      <h4 className="font-semibold text-elementz-cream mb-3" style={{ fontWeight: 400 }}>❌ NO se pueden devolver:</h4>
                       <ul className="text-elementz-gray space-y-2 text-sm">
                         <li>• Productos de higiene personal abiertos</li>
                         <li>• Champús, aceites o cremas usados</li>
@@ -89,21 +89,21 @@ export default function DevolucionesPage() {
                   </div>
                   <div className="space-y-4">
                     <div className="bg-elementz-slate p-4 rounded-lg">
-                      <h4 className="font-semibold text-elementz-cream mb-2">Estado del Producto</h4>
+                      <h4 className="font-semibold text-elementz-cream mb-2" style={{ fontWeight: 400 }}>Estado del Producto</h4>
                       <p className="text-elementz-gray text-sm">
                         El producto debe estar en las mismas condiciones en que lo recibiste, con todas las etiquetas,
                         empaques originales y accesorios incluidos.
                       </p>
                     </div>
                     <div className="bg-elementz-slate p-4 rounded-lg">
-                      <h4 className="font-semibold text-elementz-cream mb-2">Comprobante de Compra</h4>
+                      <h4 className="font-semibold text-elementz-cream mb-2" style={{ fontWeight: 400 }}>Comprobante de Compra</h4>
                       <p className="text-elementz-gray text-sm">
                         Debes presentar el comprobante de compra (factura, recibo o conversación de WhatsApp donde se
                         confirmó el pedido).
                       </p>
                     </div>
                     <div className="bg-elementz-slate p-4 rounded-lg">
-                      <h4 className="font-semibold text-elementz-cream mb-2">Motivo de Devolución</h4>
+                      <h4 className="font-semibold text-elementz-cream mb-2" style={{ fontWeight: 400 }}>Motivo de Devolución</h4>
                       <p className="text-elementz-gray text-sm">
                         Debes especificar el motivo de la devolución: defecto, producto incorrecto, daño en envío, o
                         insatisfacción.
@@ -121,7 +121,7 @@ export default function DevolucionesPage() {
                         1
                       </div>
                       <div>
-                        <h4 className="font-semibold text-elementz-cream">Contacto Inicial</h4>
+                        <h4 className="font-semibold text-elementz-cream" style={{ fontWeight: 400 }}>Contacto Inicial</h4>
                         <p className="text-elementz-gray text-sm">
                           Contáctanos por WhatsApp (+57 311 351 4498) o email (info@elementz.com) indicando tu intención
                           de devolver el producto.
@@ -133,7 +133,7 @@ export default function DevolucionesPage() {
                         2
                       </div>
                       <div>
-                        <h4 className="font-semibold text-elementz-cream">Evaluación</h4>
+                        <h4 className="font-semibold text-elementz-cream" style={{ fontWeight: 400 }}>Evaluación</h4>
                         <p className="text-elementz-gray text-sm">
                           Nuestro equipo evaluará tu solicitud y te confirmará si el producto es elegible para
                           devolución.
@@ -145,7 +145,7 @@ export default function DevolucionesPage() {
                         3
                       </div>
                       <div>
-                        <h4 className="font-semibold text-elementz-cream">Autorización</h4>
+                        <h4 className="font-semibold text-elementz-cream" style={{ fontWeight: 400 }}>Autorización</h4>
                         <p className="text-elementz-gray text-sm">
                           Si la devolución es aprobada, te proporcionaremos un número de autorización y las
                           instrucciones de envío.
@@ -157,7 +157,7 @@ export default function DevolucionesPage() {
                         4
                       </div>
                       <div>
-                        <h4 className="font-semibold text-elementz-cream">Envío del Producto</h4>
+                        <h4 className="font-semibold text-elementz-cream" style={{ fontWeight: 400 }}>Envío del Producto</h4>
                         <p className="text-elementz-gray text-sm">
                           Envía el producto a nuestra dirección. Los costos de envío de devolución corren por cuenta del
                           cliente, excepto en casos de defecto o error nuestro.
@@ -169,7 +169,7 @@ export default function DevolucionesPage() {
                         5
                       </div>
                       <div>
-                        <h4 className="font-semibold text-elementz-cream">Inspección y Reembolso</h4>
+                        <h4 className="font-semibold text-elementz-cream" style={{ fontWeight: 400 }}>Inspección y Reembolso</h4>
                         <p className="text-elementz-gray text-sm">
                           Una vez recibido, inspeccionaremos el producto y procesaremos el reembolso en 3-5 días
                           hábiles.
@@ -187,7 +187,7 @@ export default function DevolucionesPage() {
                       <div className="bg-elementz-brown text-elementz-cream rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
                         💰
                       </div>
-                      <h4 className="font-semibold text-elementz-cream mb-2">Reembolso Completo</h4>
+                      <h4 className="font-semibold text-elementz-cream mb-2" style={{ fontWeight: 400 }}>Reembolso Completo</h4>
                       <p className="text-elementz-gray text-sm">
                         Devolución del 100% del valor pagado por el producto.
                       </p>
@@ -196,14 +196,14 @@ export default function DevolucionesPage() {
                       <div className="bg-elementz-brown text-elementz-cream rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
                         🔄
                       </div>
-                      <h4 className="font-semibold text-elementz-cream mb-2">Cambio por Otro</h4>
+                      <h4 className="font-semibold text-elementz-cream mb-2" style={{ fontWeight: 400 }}>Cambio por Otro</h4>
                       <p className="text-elementz-gray text-sm">Cambio por otro producto de igual o mayor valor.</p>
                     </div>
                     <div className="bg-elementz-slate p-4 rounded-lg text-center">
                       <div className="bg-elementz-brown text-elementz-cream rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
                         🎫
                       </div>
-                      <h4 className="font-semibold text-elementz-cream mb-2">Crédito en Tienda</h4>
+                      <h4 className="font-semibold text-elementz-cream mb-2" style={{ fontWeight: 400 }}>Crédito en Tienda</h4>
                       <p className="text-elementz-gray text-sm">
                         Crédito para futuras compras con 10% adicional de bonificación.
                       </p>
@@ -216,14 +216,14 @@ export default function DevolucionesPage() {
                   <h3 className="text-xl font-anton text-elementz-cream mb-4">Garantías Especiales</h3>
                   <div className="space-y-4">
                     <div className="bg-elementz-slate p-4 rounded-lg">
-                      <h4 className="font-semibold text-elementz-cream mb-2">Garantía de Calidad (30 días)</h4>
+                      <h4 className="font-semibold text-elementz-cream mb-2" style={{ fontWeight: 400 }}>Garantía de Calidad (30 días)</h4>
                       <p className="text-elementz-gray text-sm">
                         Todos nuestros productos tienen garantía contra defectos de fabricación por 30 días. Si
                         encuentras algún defecto, lo cambiamos sin costo adicional.
                       </p>
                     </div>
                     <div className="bg-elementz-slate p-4 rounded-lg">
-                      <h4 className="font-semibold text-elementz-cream mb-2">Garantía de Satisfacción</h4>
+                      <h4 className="font-semibold text-elementz-cream mb-2" style={{ fontWeight: 400 }}>Garantía de Satisfacción</h4>
                       <p className="text-elementz-gray text-sm">
                         Si no estás completamente satisfecho con tu compra, trabajaremos contigo para encontrar una
                         solución que te deje contento, incluso fuera del período normal de devolución.

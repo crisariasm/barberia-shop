@@ -121,7 +121,7 @@ export default function AdminPage() {
               <Shield className="h-8 w-8 text-elementz-brown" />
               <span className="text-2xl font-anton text-elementz-cream">ADMIN PANEL</span>
             </div>
-            <CardTitle className="text-2xl text-elementz-cream font-anton">Acceso Administrativo</CardTitle>
+            <CardTitle className="text-2xl text-elementz-cream font-anton" style={{ fontWeight: 400 }}>Acceso Administrativo</CardTitle>
             <p className="text-elementz-gray text-sm">Solo personal autorizado</p>
           </CardHeader>
           <CardContent>
@@ -275,7 +275,7 @@ export default function AdminPage() {
             <Card className="bg-elementz-slate border-elementz-brown">
               <CardHeader>
                 <div className="flex items-center justify-between">
-                  <CardTitle className="text-elementz-cream font-anton">Gestión de Productos</CardTitle>
+                  <CardTitle className="text-elementz-cream font-anton" style={{ fontWeight: 400 }}>Gestión de Productos</CardTitle>
                   <Dialog>
                     <DialogTrigger asChild>
                       <Button className="bg-elementz-brown hover:bg-elementz-brown/80 text-elementz-cream">
@@ -451,7 +451,7 @@ export default function AdminPage() {
           <TabsContent value="orders">
             <Card className="bg-elementz-slate border-elementz-brown">
               <CardHeader>
-                <CardTitle className="text-elementz-cream font-anton">Gestión de Órdenes</CardTitle>
+                <CardTitle className="text-elementz-cream font-anton" style={{ fontWeight: 400 }}>Gestión de Órdenes</CardTitle>
               </CardHeader>
               <CardContent>
                 <Table>
@@ -513,14 +513,14 @@ export default function AdminPage() {
           <TabsContent value="categories">
             <Card className="bg-elementz-slate border-elementz-brown">
               <CardHeader>
-                <CardTitle className="text-elementz-cream font-anton">Gestión de Categorías</CardTitle>
+                <CardTitle className="text-elementz-cream font-anton" style={{ fontWeight: 400 }}>Gestión de Categorías</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   {categories.map((category) => (
                     <Card key={category.id} className="bg-elementz-dark border-elementz-brown">
                       <CardHeader>
-                        <CardTitle className="text-elementz-cream text-lg font-anton">{category.name}</CardTitle>
+                        <CardTitle className="text-elementz-cream text-lg font-anton" style={{ fontWeight: 400 }}>{category.name}</CardTitle>
                       </CardHeader>
                       <CardContent>
                         <div className="space-y-2">

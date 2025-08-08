@@ -41,6 +41,7 @@
   h5,
   h6 {
     @apply font-anton;
+    font-weight: 400;
   }
 }
 
